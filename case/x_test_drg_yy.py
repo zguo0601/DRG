@@ -68,7 +68,7 @@ class Operator(unittest.TestCase):
         self.LD.yy_login()
         time.sleep(5)
         timestr = time.strftime("%Y%m%d%H%M%S")
-        short_name = "速度与激情" + timestr
+        short_name = "世间万物" + timestr
         mail = 'Z' + timestr + '@163.com'
         number = 'A' + timestr
         self.LD.add_merchant(short_name,mail,number)

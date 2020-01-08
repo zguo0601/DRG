@@ -138,7 +138,7 @@ class add_invoice(Base):
         rows2 = r2.find_elements_by_tag_name('tr')
         #查询总列数
         tds2 = rows2[0].find_elements_by_tag_name('td')
-        #打印出每列的数据
+        #打印出每行每列的数据
         j = 0
         while j < len(rows2):
             i = 0

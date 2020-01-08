@@ -9,7 +9,7 @@ import ddt
 3.输入用户名spman_admin，密码为空，期望结果，登录失败
 '''
 
-
+#内容以字典的形式保存
 datas = ({'user': 'spman_admin', 'psd': '111111', 'expect': '达人馆_管理员'},
          {'user': '', 'psd': '111111', 'expect': ''},
          {'user': 'spman_admin', 'psd': '', 'expect': ''})

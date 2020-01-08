@@ -87,10 +87,8 @@ class LoginDrg(Base):
         self.click(self.addtask2)
         self.click(self.addtask3)
         time.sleep(1)
-
         self.click(self.addtask4)
         time.sleep(1)
-
         #self.click(self.addtask5)
         time.sleep(1)
         self.click(self.addtask6)

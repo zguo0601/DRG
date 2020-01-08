@@ -65,7 +65,7 @@ class Base():
             return False
 
     #判断定位一组元素
-    def isElementExists(self,locator):
+    def isElementsExist(self,locator):
         eles = self.findEles(locator)
         n = len(eles)
         if n == 0:
@@ -75,6 +75,20 @@ class Base():
         else:
             print('定位到多个元素：%s'%n)
             return True
+
+    # 判断元素是否可以点击输入
+    def is_clickable(self, locator):
+        ele = WebDriverWait(self.driver, self.timeout, self.t).until(EC.element_to_be_clickable(locator))
+        return ele
+
+    # 判断元素是否置灰
+    def is_Enabled(self, locator):
+        try:
+            ele = self.findEle(locator)
+            r = ele.is_enabled()
+            return r
+        except:
+            return False
 
     #判断元素是否被选中
     def isSelected(self,locator):
@@ -138,19 +152,6 @@ class Base():
         ele = self.findEle(locator)
         self.driver.execute_script("arguments[0].scrollIntoView();",ele)
 
-    #判断元素是否可以点击输入
-    def is_clickable(self,locator):
-        ele = WebDriverWait(self.driver, self.timeout, self.t).until(EC.element_to_be_clickable(locator))
-        return ele
-
-    #判断元素是否置灰
-    def is_Enabled(self,locator):
-        try:
-            ele = self.findEle(locator)
-            r = ele.is_enabled()
-            return r
-        except:
-            return False
 
 
 

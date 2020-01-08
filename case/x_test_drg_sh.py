@@ -72,11 +72,6 @@ class merchant(unittest.TestCase):
 
 
 
-
-
-
-
-
     @classmethod
     def tearDownClass(cls):
         cls.driver.refresh()

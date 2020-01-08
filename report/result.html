@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>达人馆</h1>
-<p class='attribute'><strong>Start Time:</strong> 2020-01-07 16:22:33</p>
-<p class='attribute'><strong>Duration:</strong> 0:03:49.167337</p>
-<p class='attribute'><strong>Status:</strong> Pass 6 Error 2</p>
+<p class='attribute'><strong>Start Time:</strong> 2020-01-08 14:15:06</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:30.433297</p>
+<p class='attribute'><strong>Status:</strong> Pass 3</p>
 
 <p class='description'>登录测试报告</p>
 </div>
@@ -221,17 +221,17 @@ function showOutput(id, name) {
     <td>View</td>
 </tr>
 
-<tr class='errorClass'>
-    <td>test_drg_sh.merchant</td>
-    <td>4</td>
+<tr class='passClass'>
+    <td>test_ddt.Login</td>
+    <td>3</td>
     <td>3</td>
     <td>0</td>
-    <td>1</td>
-    <td><a href="javascript:showClassDetail('c1',4)">Detail</a></td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',3)">Detail</a></td>
 </tr>
 
 <tr id='pt1.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test1_login</div></td>
+    <td class='none'><div class='testcase'>test1_1</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -254,48 +254,22 @@ pt1.1:
     </td>
 </tr>
 
-<tr id='ft1.2' class='none'>
-    <td class='errorCase'><div class='testcase'>test2_add_client</div></td>
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test1_2</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.2')" >
-        error</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
+        pass</a>
 
-    <div id='div_ft1.2' class="popup_window">
+    <div id='div_pt1.2' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.2').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.2').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-ft1.2: Traceback (most recent call last):
-  File "E:\web_auto\case\test_drg_sh.py", line 32, in test2_add_client
-    self.M.add_client(name,number)
-  File "E:\web_auto\pages\merchantfuc.py", line 101, in add_client
-    self.click(self.loc_confirm)
-  File "E:\web_auto\common\base.py", line 47, in click
-    ele =self.findEle(locator)
-  File "E:\web_auto\common\base.py", line 29, in findEle
-    ele1 = WebDriverWait(self.driver, self.timeout, self.t).until(lambda x: x.find_element(*locator))
-  File "C:\Users\a\AppData\Local\Programs\Python\Python36-32\lib\site-packages\selenium\webdriver\support\wait.py", line 80, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-
-Traceback (most recent call last):
-  File "E:\web_auto\case\test_drg_sh.py", line 32, in test2_add_client
-    self.M.add_client(name,number)
-  File "E:\web_auto\pages\merchantfuc.py", line 101, in add_client
-    self.click(self.loc_confirm)
-  File "E:\web_auto\common\base.py", line 47, in click
-    ele =self.findEle(locator)
-  File "E:\web_auto\common\base.py", line 29, in findEle
-    ele1 = WebDriverWait(self.driver, self.timeout, self.t).until(lambda x: x.find_element(*locator))
-  File "C:\Users\a\AppData\Local\Programs\Python\Python36-32\lib\site-packages\selenium\webdriver\support\wait.py", line 80, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-
-
+pt1.2: 
 
         </pre>
     </div>
@@ -305,7 +279,7 @@ selenium.common.exceptions.TimeoutException: Message:
 </tr>
 
 <tr id='pt1.3' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test3_add_recharge: 商户新增充值</div></td>
+    <td class='none'><div class='testcase'>test1_3</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -328,163 +302,12 @@ pt1.3:
     </td>
 </tr>
 
-<tr id='pt1.4' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test4_apply_invoice: 商户开票申请，确认开票信息</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.4')" >
-        pass</a>
-
-    <div id='div_pt1.4' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.4').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt1.4: 
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr class='errorClass'>
-    <td>test_drg_yy.Operator</td>
-    <td>4</td>
-    <td>3</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a href="javascript:showClassDetail('c2',4)">Detail</a></td>
-</tr>
-
-<tr id='pt2.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_1: 正常登录</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
-        pass</a>
-
-    <div id='div_pt2.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt2.1: 
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt2.2' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_add_invoice: 处理开票申请</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.2')" >
-        pass</a>
-
-    <div id='div_pt2.2' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.2').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt2.2: 
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='pt2.3' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_add_merchant: 添加商户</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.3')" >
-        pass</a>
-
-    <div id='div_pt2.3' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.3').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt2.3: 
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
-<tr id='ft2.4' class='none'>
-    <td class='errorCase'><div class='testcase'>test_add_task: 新增任务</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.4')" >
-        error</a>
-
-    <div id='div_ft2.4' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.4').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft2.4: Traceback (most recent call last):
-  File "E:\web_auto\case\test_drg_yy.py", line 91, in test_add_task
-    result = self.Drg.add_task_sucess(Job_title)
-  File "E:\web_auto\pages\yy_Loginfuc.py", line 114, in add_task_sucess
-    result = self.is_text(self.addtask16,_text)
-  File "E:\web_auto\common\base.py", line 101, in is_text
-    result = WebDriverWait(self.driver, self.timeout, self.t).until(EC.text_to_be_present_in_element(locator,_text))
-  File "C:\Users\a\AppData\Local\Programs\Python\Python36-32\lib\site-packages\selenium\webdriver\support\wait.py", line 80, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-
-Traceback (most recent call last):
-  File "E:\web_auto\case\test_drg_yy.py", line 91, in test_add_task
-    result = self.Drg.add_task_sucess(Job_title)
-  File "E:\web_auto\pages\yy_Loginfuc.py", line 114, in add_task_sucess
-    result = self.is_text(self.addtask16,_text)
-  File "E:\web_auto\common\base.py", line 101, in is_text
-    result = WebDriverWait(self.driver, self.timeout, self.t).until(EC.text_to_be_present_in_element(locator,_text))
-  File "C:\Users\a\AppData\Local\Programs\Python\Python36-32\lib\site-packages\selenium\webdriver\support\wait.py", line 80, in until
-    raise TimeoutException(message, screen, stacktrace)
-selenium.common.exceptions.TimeoutException: Message: 
-
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-</tr>
-
 <tr id='total_row'>
     <td>Total</td>
-    <td>8</td>
-    <td>6</td>
+    <td>3</td>
+    <td>3</td>
     <td>0</td>
-    <td>2</td>
+    <td>0</td>
     <td>&nbsp;</td>
 </tr>
 </table>
