@@ -4,6 +4,9 @@ import unittest,time
 from pages.merchantfuc import Merchant
 from pages.yy_add_invoice import add_invoice
 from pages.yy_add_merchant import addMerchant
+import random
+from common.sf_xm import SF
+
 
 
 
@@ -15,22 +18,26 @@ class merchant(unittest.TestCase):
         cls.M = Merchant(cls.driver)
         cls.i = add_invoice(cls.driver)
         cls.a = addMerchant(cls.driver)
+        cls.s = SF()
+
 
 
     def setUp(self):
         self.driver.get('https://spman.shb02.net/login')
 
     def test1_login(self):
+        '''商户登录'''
         self.M.merchantLogin()
         result = self.M.get_merchant_name('m_name','呜呜呜')
         print(result)
 
     def test2_add_client(self):
+        '''新增单个用户'''
         self.M.merchantLogin()
-        timestr = time.strftime("%Y%m%d%H%M%S")
-        name = '郑'+timestr
-        number = '350181200006012155'
+        name = self.s.name()
+        number = self.s.sf()
         self.M.add_client(name,number)
+        self.M.add_client_sucess(number)
 
     def test3_add_recharge(self):
         '''商户新增充值'''

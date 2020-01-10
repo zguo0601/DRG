@@ -84,6 +84,7 @@ class addMerchant(Base):
         self.click(self.loc3)
 
     def add_merchant(self,short_name='中华',mail='92589584@163.com',number='8324222222111'):
+        '''新增商户'''
         self.click(self.loc4)
         time.sleep(1)
         self.click(self.loc5)
@@ -96,8 +97,7 @@ class addMerchant(Base):
         self.sendKeys(self.loc11,'18759123659')
         self.sendKeys(self.loc12,'')
         self.click(self.loc13)
-
-
+        #上传营业执照信息
         self.sendKeys(self.loc14,'C:\\Users\\a\Desktop\\新建文件夹\\GELAIDI.jpg')
         time.sleep(5)
         self.clear(self.loc15)
@@ -113,31 +113,26 @@ class addMerchant(Base):
         time.sleep(1)
         self.driver.find_element_by_xpath('//*[@placeholder="省份"]').send_keys(Keys.ENTER)
         time.sleep(1)
-
+        #填写账户信息
         self.sendKeys(self.loc19,'北京市')
         time.sleep(1)
         self.driver.find_element_by_xpath('//*[@placeholder="城市"]').send_keys(Keys.DOWN)
         time.sleep(1)
         self.driver.find_element_by_xpath('//*[@placeholder="城市"]').send_keys(Keys.ENTER)
-
         self.sendKeys(self.loc20,'中国工商银行')
         time.sleep(1)
         self.driver.find_element_by_xpath('//input[@placeholder="请先选择开户城市"]').send_keys(Keys.DOWN)
         time.sleep(1)
         self.driver.find_element_by_xpath('//input[@placeholder="请先选择开户城市"]').send_keys(Keys.ENTER)
-
-
         self.sendKeys(self.loc21,'中国工商银行总行清算中心')
         time.sleep(3)
         self.driver.find_element_by_xpath('//input[@placeholder="请先选择开户银行"]').send_keys(Keys.DOWN)
         time.sleep(1)
         self.driver.find_element_by_xpath('//input[@placeholder="请先选择开户银行"]').send_keys(Keys.ENTER)
-
         self.sendKeys(self.loc22,'一哥')
         self.sendKeys(self.loc23,'7987846546464')
         self.click(self.loc13)
-
-
+        #开票信息
         self.clear(self.loc24)
         self.sendKeys(self.loc24,number)
         self.sendKeys(self.loc26,'555-555-555')
@@ -154,6 +149,7 @@ class addMerchant(Base):
         return r
 
     def pay_record(self):
+        '''确认充值申请'''
         self.click(self.pay_1)
         time.sleep(1)
         self.click(self.pay_2)

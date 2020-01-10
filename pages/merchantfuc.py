@@ -98,6 +98,7 @@ class Merchant(Base):
         self.sendKeys(self.loc_add_idnumber,number)
         self.sendKeys(self.loc_add_phone,'18120798657')
         self.click(self.loc_up_button)
+        time.sleep(2)
         self.click(self.loc_confirm)
 
     #断言新增商户成功
@@ -175,6 +176,9 @@ if __name__ == '__main__':
     driver = webdriver.Chrome()
     a = Merchant(driver)
     a.merchantLogin()
-    a.apply_invoice_sucess()
+    name = '张2'
+    number = '350181189106012155'
+    a.add_client(name,number)
+    a.add_client_sucess(number)
     #a.driver.quit()
 

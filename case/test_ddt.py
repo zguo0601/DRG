@@ -18,6 +18,8 @@ datas = ({'user': 'spman_admin', 'psd': '111111', 'expect': '达人馆_管理员
 
 @ddt.ddt
 class Login(unittest.TestCase):
+
+
     @classmethod
     def setUpClass(cls):
         cls.driver = webdriver.Chrome()

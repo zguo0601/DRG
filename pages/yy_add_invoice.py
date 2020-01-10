@@ -117,6 +117,7 @@ class add_invoice(Base):
         print(result)
 
     def merchant_wallet(self):
+        '''查看发包方钱包'''
         self.click(self.m_w1)
         time.sleep(1)
         self.click(self.m_w2)

@@ -25,7 +25,7 @@ class Operator(unittest.TestCase):
         self.driver.get('https://spman.shb02.net/admin/login')
 
     def test_1(self):
-        '''正常登录'''
+        '''运营登录'''
         #用实例化Drg调用下面的方法
         print('------------------测试开始---------------------')
         self.Drg.login()
@@ -63,7 +63,7 @@ class Operator(unittest.TestCase):
     #             i.click()
     #
     def test_add_merchant(self):
-        '''添加商户'''
+        '''新增发包方'''
         print('------------------测试开始---------------------')
         self.LD.yy_login()
         time.sleep(5)
