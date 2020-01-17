@@ -362,9 +362,9 @@ function hide_img(obj){
 </div>
 <div class='heading'>
 <h1>达人馆</h1>
-<p class='attribute'><strong>开始时间:</strong> 2020-01-13 10:08:44</p>
-<p class='attribute'><strong>耗时:</strong> 0:00:38.863018</p>
-<p class='attribute'><strong>状态:</strong> <span class="tj passCase">Pass</span>3</p>
+<p class='attribute'><strong>开始时间:</strong> 2020-01-17 10:17:31</p>
+<p class='attribute'><strong>耗时:</strong> 0:00:00</p>
+<p class='attribute'><strong>状态:</strong> <span class="tj errorCase">Error</span>1</p>
 
 <p class='description'>测试报告</p>
 </div>
@@ -397,98 +397,41 @@ function hide_img(obj){
     <th>错误截图</th>
 </tr>
 
-<tr class='passClass'>
-    <td>test_ddt.Login</td>
-    <td>3</td>
-    <td>3</td>
+<tr class='errorClass'>
+    <td>unittest.loader._FailedTest</td>
+    <td>1</td>
     <td>0</td>
     <td>0</td>
-    <td><a href="javascript:showClassDetail('c1',3)">详情</a></td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c1',1)">详情</a></td>
     <td>&nbsp;</td>
 </tr>
 
-<tr id='pt1.1' class='hiddenRow'>
-    <td ><div class='testcase'>test1_1</div></td>
+<tr id='ft1.1' class='none'>
+    <td ><div class='testcase'>test_drg</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <span class='status passCase'>
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
-        通过</a></span>
+    <span class='status errorCase'>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
+        错误</a></span>
 
-    <div id='div_pt1.1' class="popup_window">
+    <div id='div_ft1.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt1.1: 测试数据:{'user': 'spman_admin', 'psd': '111111', 'expect': '达人馆_管理员'}
-正在定位元素信息：定位方式-&gt;id,value值-&gt;login_name
-正在定位元素信息：定位方式-&gt;id,value值-&gt;password
-正在定位元素信息：定位方式-&gt;css selector,value值-&gt;.login_btn
-达人馆_管理员
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td>无截图</td>
-</tr>
-
-<tr id='pt1.2' class='hiddenRow'>
-    <td ><div class='testcase'>test1_2</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <span class='status passCase'>
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
-        通过</a></span>
-
-    <div id='div_pt1.2' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.2').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt1.2: 测试数据:{'user': '', 'psd': '111111', 'expect': ''}
-正在定位元素信息：定位方式-&gt;id,value值-&gt;login_name
-正在定位元素信息：定位方式-&gt;id,value值-&gt;password
-正在定位元素信息：定位方式-&gt;css selector,value值-&gt;.login_btn
-
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td>无截图</td>
-</tr>
-
-<tr id='pt1.3' class='hiddenRow'>
-    <td ><div class='testcase'>test1_3</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <span class='status passCase'>
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.3')" >
-        通过</a></span>
-
-    <div id='div_pt1.3' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.3').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt1.3: 测试数据:{'user': 'spman_admin', 'psd': '', 'expect': ''}
-正在定位元素信息：定位方式-&gt;id,value值-&gt;login_name
-正在定位元素信息：定位方式-&gt;id,value值-&gt;password
-正在定位元素信息：定位方式-&gt;css selector,value值-&gt;.login_btn
+ft1.1: ImportError: Failed to import test module: test_drg
+Traceback (most recent call last):
+  File "C:\Users\a\AppData\Local\Programs\Python\Python36-32\lib\unittest\loader.py", line 428, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "C:\Users\a\AppData\Local\Programs\Python\Python36-32\lib\unittest\loader.py", line 369, in _get_module_from_name
+    __import__(name)
+  File "E:\web_auto\case\test_drg.py", line 6, in &lt;module&gt;
+    from pages.page_drg import drg_pages
+ModuleNotFoundError: No module named 'pages.page_drg'
 
 
 
@@ -502,17 +445,17 @@ pt1.3: 测试数据:{'user': 'spman_admin', 'psd': '', 'expect': ''}
 
 <tr id='total_row'>
     <th>统计</th>
-    <th>3</th>
-    <th>3</th>
+    <th>1</th>
     <th>0</th>
     <th>0</th>
+    <th>1</th>
     <th>&nbsp;</th>
     <th>&nbsp;</th>
 </tr>
 </table>
 <script>
     showCase(1);
-    drawCircle(3, 0, 0);
+    drawCircle(0, 0, 1);
 </script>
 
 <div id='ending'>&nbsp;</div>

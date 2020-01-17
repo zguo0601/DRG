@@ -69,11 +69,14 @@ class SF():
     def name(self):
         xing = '赵钱孙李周吴郑王冯陈褚卫蒋沈韩杨朱秦尤许何吕施张孔曹严华金魏陶姜'
         ming = '豫章故郡洪都新府星分翼轸地接衡庐襟三江而带五湖'
-        X = random.choice(xing)
-        M = "".join(random.choice(ming) for i in range(2))
-        return M
+        X = random.choice(xing)#在xing中随机选择一个字符串
+        M = ''.join(random.choice(ming) for i in range(2))#
+        n = X+M
+        return n
+
+
 
 
 if __name__ == '__main__':
     a = SF()
-    a.sf()
+    print(a.name())

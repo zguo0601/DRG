@@ -8,6 +8,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 #select模块导入
 from selenium.webdriver.support.select import Select
+from selenium.webdriver.common.keys import Keys
 
 
 
@@ -151,6 +152,8 @@ class Base():
     def js_focus(self,locator):
         ele = self.findEle(locator)
         self.driver.execute_script("arguments[0].scrollIntoView();",ele)
+
+
 
 
 
