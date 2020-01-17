@@ -211,6 +211,7 @@ class drg_pages(Base):
         self.sendKeys(self.legal_person,legalperson)
         self.click(self.live)
         self.click(self.next)
+        time.sleep(1)
         #结算账户，点击省、点击开户省、点击开户城市、点击城市、点击开户银行、点击银行、输入开户人、输入银行卡号、点击下一步
         self.click(self.open_province)
         time.sleep(1)
@@ -221,7 +222,7 @@ class drg_pages(Base):
         self.click(self.city)
         time.sleep(1)
         self.click(self.open_bank)
-        time.sleep(1)
+        time.sleep(2)
         self.click(self.bank)
         time.sleep(1)
         self.click(self.open_bank1)
