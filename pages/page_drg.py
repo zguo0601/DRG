@@ -451,14 +451,9 @@ class drg_pages(Base):
             self.click(self.add_pay8)
             self.click(self.add_pay9)
             print('新增充值处理成功')
-
-
     def addPaySucess(self,text):
         result = self.is_text(self.add_pay_sucess,text)
         return result
-
-
-
 
     #充值订单驳回
     def addPayFail(self,money):
@@ -497,9 +492,6 @@ class drg_pages(Base):
             self.click(self.add_pay5)
             self.click(self.add_payfail1)
             self.click(self.add_payfail2)
-
-
-
     def addPayFailSucess(self,text):
         result = self.is_text(self.add_payfail_sucess, text)
         return result

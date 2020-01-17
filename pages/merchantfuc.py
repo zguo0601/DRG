@@ -176,10 +176,6 @@ class Merchant(Base):
 if __name__ == '__main__':
     driver = webdriver.Chrome()
     a = Merchant(driver)
-    a.merchantLogin()
-    name = '张2'
-    number = '350181189106012155'
-    a.add_client(name,number)
-    a.add_client_sucess(number)
+    a.add_recharge('123')
     #a.driver.quit()
 
