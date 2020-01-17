@@ -219,17 +219,17 @@ class drg_pages(Base):
         self.click(self.next)
         #结算账户，点击省、点击开户省、点击开户城市、点击城市、点击开户银行、点击银行、输入开户人、输入银行卡号、点击下一步
         self.click(self.open_province)
-        time.sleep(1)
+        time.sleep(2)
         self.click(self.province)
-        time.sleep(1)
+        time.sleep(2)
         self.click(self.open_city)
-        time.sleep(1)
+        time.sleep(2)
         self.click(self.city)
-        time.sleep(1)
+        time.sleep(2)
         self.click(self.open_bank)
         time.sleep(2)
         self.click(self.bank)
-        time.sleep(1)
+        time.sleep(2)
         self.click(self.open_bank1)
         time.sleep(2)
         self.click(self.bank1)
@@ -274,6 +274,7 @@ class drg_pages(Base):
     #跳转商户详情页面
     def merchantdetails(self):
         self.FBF_page()
+        time.sleep(1)
         self.click(self.merchant_details)
 
     def merchantDetailsSucess(self,text):
@@ -402,6 +403,7 @@ class drg_pages(Base):
         self.pay()
         self.clear(self.pay_details1)
         self.click(self.pay_details2)
+        time.sleep(1)
         self.click(self.pay_details3)
 
     def payDetailsSucess(self,text):
