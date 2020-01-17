@@ -113,8 +113,11 @@ class Base():
 
     #判断文本对象,返回的是布尔值，判断某个元素中的text是否包含了预期的字符串
     def is_text(self,locator,_text):
-        result = WebDriverWait(self.driver, self.timeout, self.t).until(EC.text_to_be_present_in_element(locator,_text))
-        return result
+        try:
+            result = WebDriverWait(self.driver, self.timeout, self.t).until(EC.text_to_be_present_in_element(locator,_text))
+            return result
+        except:
+            return False
 
     #鼠标悬停
     def move_to_element(self,locator):

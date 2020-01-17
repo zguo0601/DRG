@@ -155,13 +155,13 @@ class DRG(unittest.TestCase):
 
     def test_drg_018(self):
         '''确认充值申请'''
-        self.DP.addPay()
+        self.DP.addPay('10')
         result = self.DP.addPaySucess('成功')
         print(result)
 
     def test_drg_019(self):
         '''充值订单驳回'''
-        self.DP.addPayFail()
+        self.DP.addPayFail('20')
         result = self.DP.addPayFailSucess('异议驳回')
         print(result)
 

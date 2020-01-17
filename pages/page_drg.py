@@ -3,6 +3,7 @@ from common.base import Base
 from selenium.webdriver.common.by import By
 import time
 from selenium.webdriver.common.keys import Keys
+from pages.merchantfuc import Merchant
 
 
 
@@ -134,6 +135,8 @@ class drg_pages(Base):
     add_pay2 = ('xpath','//*[@placeholder="付款状态"]')
     add_pay3 = ('xpath','//*[@class="el-select-dropdown__item hover"]/span')
     add_pay4 = ('xpath','//*[@id="app"]/section/div[2]/section/div[1]/form/div[8]/div/button')
+    #判断是否详情，有执行后面操作，没有提示：暂无充值记录
+    no_add_pay1 = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr/td[1]/div/div')
     add_pay5 = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr[1]/td[10]/div/button/span')
     add_pay6 = ('xpath','//*[@id="app"]/section/div[2]/section/div[2]/button[1]')
     add_pay7 = ('xpath','//*[@placeholder="选择日期时间"]')
@@ -162,6 +165,8 @@ class drg_pages(Base):
         self.driver = driver
         self.timeout = 10
         self.t = 1
+        self.MC = Merchant(driver)
+
 
     #登录
     def login(self,user='spman_admin',psd='111111'):
@@ -204,14 +209,14 @@ class drg_pages(Base):
         self.click(self.next)
         #营业执照，上传营业执照，重新输入营业执照号、法人姓名、点击直播，点击下一步
         self.sendKeys(self.upload_license,'C:\\Users\\a\\Desktop\\新建文件夹\\1.jpg')
-        time.sleep(1)
+        time.sleep(3)
         self.clear(self.business_license)
         time.sleep(1)
         self.sendKeys(self.business_license,businesslicense)
+        time.sleep(1)
         self.sendKeys(self.legal_person,legalperson)
         self.click(self.live)
         self.click(self.next)
-        time.sleep(1)
         #结算账户，点击省、点击开户省、点击开户城市、点击城市、点击开户银行、点击银行、输入开户人、输入银行卡号、点击下一步
         self.click(self.open_province)
         time.sleep(1)
@@ -403,7 +408,7 @@ class drg_pages(Base):
         result = self.is_text(self.pay_details_sucess,text)
         return result
     #确认充值申请,付款记录--1.清除开始时间、2.点击付款状态3.点击等待确认4.点击查询5.点击详情6.点击手动确认7.点击汇款时间8.点击此刻9.点击确定
-    def addPay(self):
+    def addPay(self,money):
         self.pay()
         self.clear(self.add_pay1)
         self.click(self.add_pay2)
@@ -413,18 +418,48 @@ class drg_pages(Base):
         self.driver.find_element_by_xpath('//*[@id="app"]/section/div[2]/section/div[1]/form/div[6]/div/div/div[1]/input').send_keys(Keys.DOWN)
         self.driver.find_element_by_xpath('//*[@id="app"]/section/div[2]/section/div[1]/form/div[6]/div/div/div[1]/input').send_keys(Keys.ENTER)
         self.click(self.add_pay4)
-        self.click(self.add_pay5)
-        self.click(self.add_pay6)
-        self.click(self.add_pay7)
-        time.sleep(1)
-        self.click(self.add_pay8)
-        self.click(self.add_pay9)
+        #判断是否有记录，在执行后面操作
+        noadd1 = self.driver.find_element_by_xpath('//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr/td[1]/div/div').text
+        if noadd1 == 1:
+            self.click(self.add_pay5)
+            self.click(self.add_pay6)
+            self.click(self.add_pay7)
+            time.sleep(1)
+            self.click(self.add_pay8)
+            self.click(self.add_pay9)
+            print('处理成功')
+        else :
+            self.MC.add_recharge(money)
+            self.pay()
+            self.clear(self.add_pay1)
+            self.click(self.add_pay2)
+            time.sleep(1)
+            # self.click(self.add_pay3)
+            self.driver.find_element_by_xpath(
+                '//*[@id="app"]/section/div[2]/section/div[1]/form/div[6]/div/div/div[1]/input').send_keys(Keys.DOWN)
+            self.driver.find_element_by_xpath(
+                '//*[@id="app"]/section/div[2]/section/div[1]/form/div[6]/div/div/div[1]/input').send_keys(Keys.DOWN)
+            self.driver.find_element_by_xpath(
+                '//*[@id="app"]/section/div[2]/section/div[1]/form/div[6]/div/div/div[1]/input').send_keys(Keys.ENTER)
+            self.click(self.add_pay4)
+            self.click(self.add_pay5)
+            self.click(self.add_pay6)
+            self.click(self.add_pay7)
+            time.sleep(1)
+            self.click(self.add_pay8)
+            self.click(self.add_pay9)
+            print('新增充值处理成功')
+
 
     def addPaySucess(self,text):
         result = self.is_text(self.add_pay_sucess,text)
         return result
+
+
+
+
     #充值订单驳回
-    def addPayFail(self):
+    def addPayFail(self,money):
         self.pay()
         self.clear(self.add_pay1)
         self.click(self.add_pay2)
@@ -437,9 +472,31 @@ class drg_pages(Base):
         self.driver.find_element_by_xpath(
             '//*[@id="app"]/section/div[2]/section/div[1]/form/div[6]/div/div/div[1]/input').send_keys(Keys.ENTER)
         self.click(self.add_pay4)
-        self.click(self.add_pay5)
-        self.click(self.add_payfail1)
-        self.click(self.add_payfail2)
+        noadd1 = self.driver.find_element_by_xpath(
+            '//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr/td[1]/div/div').text
+        if noadd1 == 1:
+            self.click(self.add_pay5)
+            self.click(self.add_payfail1)
+            self.click(self.add_payfail2)
+        else:
+            self.MC.add_recharge(money)
+            self.pay()
+            self.clear(self.add_pay1)
+            self.click(self.add_pay2)
+            time.sleep(1)
+            # self.click(self.add_pay3)
+            self.driver.find_element_by_xpath(
+                '//*[@id="app"]/section/div[2]/section/div[1]/form/div[6]/div/div/div[1]/input').send_keys(Keys.DOWN)
+            self.driver.find_element_by_xpath(
+                '//*[@id="app"]/section/div[2]/section/div[1]/form/div[6]/div/div/div[1]/input').send_keys(Keys.DOWN)
+            self.driver.find_element_by_xpath(
+                '//*[@id="app"]/section/div[2]/section/div[1]/form/div[6]/div/div/div[1]/input').send_keys(Keys.ENTER)
+            self.click(self.add_pay4)
+            self.click(self.add_pay5)
+            self.click(self.add_payfail1)
+            self.click(self.add_payfail2)
+
+
 
     def addPayFailSucess(self,text):
         result = self.is_text(self.add_payfail_sucess, text)
@@ -455,14 +512,6 @@ class drg_pages(Base):
     def loanRecordSucess(self,text):
         result = self.is_text(self.loan_record_sucess, text)
         return result
-
-
-
-
-
-
-
-
 
 
 
@@ -486,9 +535,10 @@ if __name__ == '__main__':
     # workbusiness = '直播'
     # platform = '抖音'
     # service = '音视频服务'
-    # a.addFbf(shortname,linkname,email,address,phone,businesslicense,legalperson,openname,banknumber,
+    # DP.addFbf(shortname,linkname,email,address,phone,businesslicense,legalperson,openname,banknumber,
     #          ratepayernumber,worktelphone,invoicecontent,workbusiness,platform,service)
-    # result = a.addFbf_sucess(long_timestr)
+    # result = DP.addFbf_sucess(long_timestr)
+    # print(result)
     #----------------------------------------
     # timestr = time.strftime("%H%M%S")
     # shortname = '呜呜呜'
@@ -501,9 +551,10 @@ if __name__ == '__main__':
     # result = DP.addTaskSucess(taskname)
     # print(result)
     #--------------------------------------------
-    DP.loanRecord()
-    result = DP.loanRecordSucess('放款笔数（笔）')
-    print(result)
+    money = '50'
+    DP.addPay(money)
+
+
 
 
 

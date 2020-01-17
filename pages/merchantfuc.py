@@ -108,6 +108,7 @@ class Merchant(Base):
 
     #新增充值
     def add_recharge(self,money):
+        self.merchantLogin()
         self.click(self.loc_recharge)
         time.sleep(1)
         self.click(self.loc_add_recharge)
