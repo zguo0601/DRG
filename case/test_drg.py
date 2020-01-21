@@ -58,7 +58,7 @@ class DRG(unittest.TestCase):
         name = self.sj.name()
         tel = self.sj.phone()
         bankcard = self.sj.bankcard()
-        shortname = '__'+name+'__' + '科技有限公司'
+        shortname = name+ '科技有限公司'
         linkname = name
         email = self.sj.get_email()
         address = '福州仓山万达'

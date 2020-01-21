@@ -4,11 +4,8 @@
     <list default="true" id="72782b61-1108-4fea-ba2d-44e8cddf854e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/web_auto.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/web_auto.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case/pytest.py" beforeDir="false" afterPath="$PROJECT_DIR$/case/pytest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/case/test_drg.py" beforeDir="false" afterPath="$PROJECT_DIR$/case/test_drg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/base.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/sf_xm.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/sf_xm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/page_drg.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/page_drg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_all.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_all.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
