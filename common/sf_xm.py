@@ -74,9 +74,29 @@ class SF():
         n = X+M
         return n
 
+    def phone(self):
+        headList = ["130", "131", "132", "133", "134", "135", "136", "137", "138", "139",
+                    "147", "150", "151", "152", "153", "155", "156", "157", "158", "159",
+                    "186", "187", "188", "189"]
+        return (random.choice(headList) + "".join(random.choice("0123456789") for i in range(8)))
+
+    def bankcard(self):
+        card_id = '62'
+        for i in range(17):
+            ran = str(random.randint(0, 9))
+            card_id += ran
+        return card_id
+
+    def get_email(self):
+        email_suf = random.choice(
+            ['@163.com', '@qq.com', '@126.com', '@sina.com', '@sina.cn', '@soho.com', '@yeah.com'])
+        phone = self.phone()
+        email = phone + email_suf
+        return email
+
 
 
 
 if __name__ == '__main__':
     a = SF()
-    print(a.name())
+    print(a.get_email())

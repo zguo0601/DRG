@@ -4,6 +4,7 @@ import ddt
 import time
 from selenium import webdriver
 from pages.page_drg import drg_pages
+from common.sf_xm import SF
 
 
 
@@ -15,6 +16,9 @@ class DRG(unittest.TestCase):
         cls.time = 10
         cls.t = 1
         cls.DP = drg_pages(cls.driver)
+        cls.sj = SF()
+
+
 
     def setUp(self):
         self.driver.get('https://spman.shb02.net/admin/login')
@@ -51,17 +55,20 @@ class DRG(unittest.TestCase):
         '''新增发包方'''
         timestr = time.strftime("%H%M%S")
         long_timestr = time.strftime("%Y%m%d%H%M%S")
-        shortname = '战狼' + timestr
-        linkname = '吴京'
-        email = long_timestr + '163.com'
+        name = self.sj.name()
+        tel = self.sj.phone()
+        bankcard = self.sj.bankcard()
+        shortname = '__'+name+'__' + '科技有限公司'
+        linkname = name
+        email = self.sj.get_email()
         address = '福州仓山万达'
-        phone = '18569669658'
+        phone = tel
         businesslicense = long_timestr
-        legalperson = '吴京'
-        openname = '吴京'
-        banknumber = '6232111820006508159'
+        legalperson = name
+        openname = name
+        banknumber = bankcard
         ratepayernumber = long_timestr
-        worktelphone = '8888-8888-8888'
+        worktelphone = tel
         invoicecontent = '信息传播'
         workbusiness = '直播'
         platform = '抖音'
@@ -169,6 +176,12 @@ class DRG(unittest.TestCase):
         '''付款记录页面'''
         self.DP.loanRecord()
         result = self.DP.loanRecordSucess('放款笔数（笔）')
+        print(result)
+
+    def test_drg_021(self):
+        '''放款记录详情页面'''
+        self.DP.loanDetails()
+        result = self.DP.loanDetailsSucess('放款详情')
         print(result)
 
 

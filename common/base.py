@@ -79,8 +79,11 @@ class Base():
 
     # 判断元素是否可以点击输入
     def is_clickable(self, locator):
-        ele = WebDriverWait(self.driver, self.timeout, self.t).until(EC.element_to_be_clickable(locator))
-        return ele
+        try:
+            ele = WebDriverWait(self.driver, self.timeout, self.t).until(EC.element_to_be_clickable(locator))
+            return ele
+        except:
+            return False
 
     # 判断元素是否置灰
     def is_Enabled(self, locator):

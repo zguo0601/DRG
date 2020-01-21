@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 import time
 from selenium.webdriver.common.keys import Keys
 from pages.merchantfuc import Merchant
+from common.sf_xm import SF
 
 
 
@@ -152,6 +153,20 @@ class drg_pages(Base):
     loan_manage = ('xpath','//*[@id="menu"]/li[4]/div/span')
     loan_record = ('xpath','//*[@id="menu"]/li[4]/ul/li[1]')
     loan_record_sucess = ('xpath','//*[@id="app"]/section/div[2]/section/div[2]/ul/li[1]/span')
+    # 021 放款记录详情页面
+    loan_details1 = ('xpath','//*[@id="menu"]/li[4]/div/span')
+    loan_details2 = ('xpath','//*[@id="menu"]/li[4]/ul/li[1]')
+    loan_details3 = ('xpath','//*[@id="app"]/section/div[2]/section/div[1]/form/div[2]/div/div/input')
+    loan_details4 = ('xpath','//*[@id="app"]/section/div[2]/section/div[1]/form/div[8]/div/button[1]')
+    loan_details5 = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr[1]/td[12]/div/button[1]/span')
+    loan_details_sucess = ('xpath','//*[@id="app"]/section/div[2]/section/h2')
+    # 022 上传完税证明
+    upload_prove4 = ('xpath','//*[@id="app"]/section/div[2]/section/div[1]/form/div[7]/div/div/div[1]/input')
+    upload_prove5 = ('xpath','/html/body/div[3]/div/div[1]/ul/li[1]/span')
+    upload_prove6 = ('xpath','//*[@id="app"]/section/div[2]/section/div[1]/form/div[8]/div/button[1]')
+    upload_prove7 = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr[1]/td[12]/div/label/input')
+    upload_prove_sucess = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr[1]/td[12]/div/label/text()')
+
 
 
 
@@ -168,35 +183,39 @@ class drg_pages(Base):
         self.MC = Merchant(driver)
 
 
-    #登录
+    #  登录
     def login(self,user='spman_admin',psd='111111'):
         self.driver.get(yy_url)
         self.sendKeys(self.username,user)
         self.sendKeys(self.password,psd)
         self.click(self.buttom)
-    #判断登录是否成功
+    # 001 判断登录是否成功
     def get_login_name(self,text):
         result = self.is_text(self.login_sucess_name,text)
         return result
-    #判断用户名是否为空
+
+    # 002 判断用户名是否为空
     def get_username_null(self,text):
         result = self.is_text(self.username_null, text)
         return result
-    #判断密码是否为空
+
+    # 003 判断密码是否为空
     def get_password_null(self,text):
         result = self.is_text(self.password_null, text)
         return result
-    #打开发包方管理页面
+
+
+    # 004 打开发包方管理页面
     def FBF_page(self):
         self.login()
         self.click(self.user_control)
         time.sleep(1)
         self.click(self.FBF_control)
-    #判断是否打开发包方页面
     def FBF_page_sucess(self,text):
         result = self.is_text(self.add_FBF,text)
         return result
-    #新增发包方
+
+    # 005 新增发包方
     def addFbf(self,shortname,linkname,email,address,phone,businesslicense,legalperson,openname,banknumber,ratepayernumber,worktelphone,invoicecontent,workbusiness,platform,service):
         self.FBF_page()
         self.click(self.add_FBF)
@@ -252,35 +271,35 @@ class drg_pages(Base):
         self.FBF_page()
         result = self.is_text(self.add_fbf_sucess,text)
         return result
-    #发包方简称查询
+
+    # 006 发包方简称查询
     def checkShortname(self,name):
         self.FBF_page()
         self.sendKeys(self.check_shortname,name)
         self.click(self.check_button)
-
     def checkShortnameSucess(self,text):
         result = self.is_text(self.check_shortname_sucess,text)
         return result
 
-    #纳税识别号查询
+    # 007 纳税识别号查询
     def checkRatepayerNumber(self,number):
         self.FBF_page()
         self.sendKeys(self.check_ratepayer_number,number)
         self.click(self.check_button)
-
     def checkRatepayerSucess(self,text):
         result = self.is_text(self.check_ratepayer_sucess, text)
         return result
-    #跳转商户详情页面
+
+    # 008 跳转商户详情页面
     def merchantdetails(self):
         self.FBF_page()
         time.sleep(1)
         self.click(self.merchant_details)
-
     def merchantDetailsSucess(self,text):
         result = self.is_text(self.merchant_details_sucess, text)
         return result
-    #跳转归属用户页面
+
+    # 009 跳转归属用户页面
     def affiliationUser(self):
         self.FBF_page()
         self.click(self.audit_status)
@@ -288,32 +307,32 @@ class drg_pages(Base):
         self.click(self.the_audit_pass)
         self.click(self.check_button)
         self.click(self.affiliation_user)
-
     def affiliationUserSucess(self,text):
         result = self.is_text(self.affiliation_user_sucess, text)
         return result
-    #承揽方管理页面
+
+    # 010 承揽方管理页面
     def userPages(self):
         self.login()
         self.click(self.user_control)
         time.sleep(1)
         self.click(self.user_pages)
-
     def userPagesSucess(self,text):
         result = self.is_text(self.user_pages_sucess,text)
         return result
-    #承揽方详情页面
+
+    # 011 承揽方详情页面
     def userDetails(self):
         self.login()
         self.click(self.user_control)
         time.sleep(1)
         self.click(self.user_pages)
         self.click(self.user_details)
-
     def userDetailsSucess(self,text):
         result = self.is_text(self.user_details_sucess,text)
         return result
-    #新增任务:1.点击任务管理、2.点击新增任务、3.点击发包方、4.输入发包方简称、5.点击查询、6.点击确定、7.输入任务标题、8.点击标签、9.点击内容主题
+
+    # 012 新增任务:1.点击任务管理、2.点击新增任务、3.点击发包方、4.输入发包方简称、5.点击查询、6.点击确定、7.输入任务标题、8.点击标签、9.点击内容主题
     #10.输入赏金、11.点击平台、12.输入招募人数、13.输入工作地点、14.输入任务描述、15.点击确认
     def addTask(self,shortname,taskname,money,number,workpalce,taskdetails):
         self.login()
@@ -335,22 +354,22 @@ class drg_pages(Base):
         self.sendKeys(self.add_task_13, workpalce)
         self.sendKeys(self.add_task_14, taskdetails)
         self.click(self.add_task_15)
-
     def addTaskSucess(self,text):
         result = self.is_text(self.add_task_16,text)
         return result
 
+    # 013 跳转任务详情页面
     def taskDetails(self):
         self.login()
         self.click(self.add_task_1)
         time.sleep(1)
         self.click(self.task_countorl)
         self.click(self.task_details)
-
     def taskDetailsSucess(self,text):
         result = self.is_text(self.task_details_sucess,text)
         return result
 
+    #014 跳转报名信息页面
     def taskInformation(self):
         self.login()
         self.click(self.add_task_1)
@@ -358,10 +377,11 @@ class drg_pages(Base):
         self.click(self.task_countorl)
         time.sleep(1)
         self.click(self.task_information)
-
     def taskInformationSucess(self,text):
         result = self.is_text(self.task_information_sucess,text)
         return result
+
+    #  015 关闭任务
     #1.点击任务管理、2.点击任务管理、3.点击任务状态、4.点击已发布、5.点击查询、
     # 6.获取第一个任务标题、7.点击第一个任务关闭、8.点击确定、9.点击新增任务、10点击任务管理、11.输入任务标题、12.点击查询
     def taskClose(self):
@@ -383,33 +403,32 @@ class drg_pages(Base):
         self.click(self.task_countorl)
         self.sendKeys(self.task_close9,taskname)
         self.click(self.task_close10)
-    #关闭任务
     def taskCloseSucess(self,text):
         result = self.is_text(self.task_close_sucess,text)
         return result
-    #跳转付款记录页面
+
+    # 016跳转付款记录页面
     def pay(self):
         self.login()
         self.click(self.pay1)
         time.sleep(1)
         self.click(self.pay2)
-
     def paySucess(self,text):
         result = self.is_text(self.pay_sucess,text)
         return result
 
-    #跳转充值详情页面,1.点击清除时间、2.点击查询、3.点击详情
+    # 017 跳转充值详情页面,1.点击清除时间、2.点击查询、3.点击详情
     def payDetails(self):
         self.pay()
         self.clear(self.pay_details1)
         self.click(self.pay_details2)
         time.sleep(1)
         self.click(self.pay_details3)
-
     def payDetailsSucess(self,text):
         result = self.is_text(self.pay_details_sucess,text)
         return result
-    #确认充值申请,付款记录--1.清除开始时间、2.点击付款状态3.点击等待确认4.点击查询5.点击详情6.点击手动确认7.点击汇款时间8.点击此刻9.点击确定
+
+    # 018 确认充值申请,付款记录--1.清除开始时间、2.点击付款状态3.点击等待确认4.点击查询5.点击详情6.点击手动确认7.点击汇款时间8.点击此刻9.点击确定
     def addPay(self,money):
         self.pay()
         self.clear(self.add_pay1)
@@ -455,7 +474,7 @@ class drg_pages(Base):
         result = self.is_text(self.add_pay_sucess,text)
         return result
 
-    #充值订单驳回
+    # 019 充值订单驳回
     def addPayFail(self,money):
         self.pay()
         self.clear(self.add_pay1)
@@ -496,16 +515,53 @@ class drg_pages(Base):
         result = self.is_text(self.add_payfail_sucess, text)
         return result
 
-    #平台放款记录
+    # 020 平台放款记录
     def loanRecord(self):
         self.login()
         self.click(self.loan_manage)
         time.sleep(1)
         self.click(self.loan_record)
-
     def loanRecordSucess(self,text):
         result = self.is_text(self.loan_record_sucess, text)
         return result
+
+    #021 放款记录详情页面
+    def loanDetails(self):
+        self.login()
+        self.click(self.loan_details1)
+        time.sleep(1)
+        self.click(self.loan_details2)
+        self.clear(self.loan_details3)
+        self.click(self.loan_details4)
+        self.click(self.loan_details5)
+    def loanDetailsSucess(self,text):
+        result = self.is_text(self.loan_details_sucess,text)
+        return result
+
+    # 022 上传完税证明
+    def upLoadProve(self):
+        self.login()
+        self.driver.maximize_window()
+        self.click(self.loan_details1)
+        time.sleep(1)
+        self.click(self.loan_details2)
+        self.clear(self.loan_details3)
+        self.click(self.upload_prove4)
+        time.sleep(1)
+        self.driver.find_element_by_xpath('//*[@id="app"]/section/div[2]/section/div[1]/form/div[6]/div/div/div[1]/input').send_keys(Keys.DOWN)
+        self.driver.find_element_by_xpath('//*[@id="app"]/section/div[2]/section/div[1]/form/div[6]/div/div/div[1]/input').send_keys(Keys.ENTER)
+        time.sleep(1)
+        self.click(self.upload_prove6)
+        #判断是否已经上传，已上传的话重新再传一次
+        cc = self.driver.find_element_by_xpath('//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr[1]/td[12]/div/label').text
+        if cc == '[重传完税证明]':
+            self.sendKeys(self.upload_prove7,'C:\\Users\\a\\Desktop\\新建文件夹\\6.png')
+        else:
+            self.sendKeys(self.upload_prove7, 'C:\\Users\\a\\Desktop\\新建文件夹\\6.png')
+    def upLoadProveSucess(self,text):
+        result = self.is_text(self.upload_prove_sucess,text)
+        return result
+
 
 
 
@@ -545,8 +601,10 @@ if __name__ == '__main__':
     # result = DP.addTaskSucess(taskname)
     # print(result)
     #--------------------------------------------
-    money = '50'
-    DP.addPay(money)
+    DP.upLoadProve()
+    result = DP.upLoadProveSucess('[重传完税证明]')
+    print(result)
+
 
 
 
