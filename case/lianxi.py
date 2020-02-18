@@ -4,18 +4,19 @@ from pages.yy_Loginfuc import LoginDrg
 import time
 import random
 
-timestr = time.strftime("%H%M%S")
-print(timestr)
 
 
 
 
 
-# driver = webdriver.Chrome()
+driver = webdriver.Chrome()
+
 # a = LoginDrg(driver)
 # b = Base(driver)
 #
-# a.driver.get("https://spman.shb02.net/admin/login")
+driver.get("https://spman.shb02.net/admin/login")
+time.sleep(3)
+driver.quit()
 # js_input_username = 'document.getElementById("login_name").value="spman_admin"'
 # js_input_password = 'document.getElementById("password").value="111111"'
 # js_click_rm_name = 'document.getElementById("save_pass").click()'

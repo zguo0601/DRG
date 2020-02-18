@@ -82,7 +82,7 @@ class DRG(unittest.TestCase):
 
     def test_drg_006(self):
         '''发包方简称查询'''
-        name = '呜呜呜'
+        name = '极限传媒'
         self.DP.checkShortname(name)
         result = self.DP.checkShortnameSucess(name)
         print(result)
@@ -120,8 +120,9 @@ class DRG(unittest.TestCase):
 
     def test_drg_012(self):
         '''新增任务'''
-        shortname = '呜呜呜'
-        taskname = '海绵宝宝'
+        name = self.sj.name()
+        shortname = '极限传媒'
+        taskname = name
         money = '5000'
         number = '200'
         workpalce = '海底世界'
@@ -144,7 +145,14 @@ class DRG(unittest.TestCase):
 
     def test_drg_015(self):
         '''关闭任务'''
-        self.DP.taskClose()
+        shortname = '极限传媒'
+        taskname = '海绵宝宝111'
+        money = '500'
+        number = '20'
+        workpalce = '海底世界'
+        taskdetails = '到海底世界看海绵宝宝'
+        text = '已发布'
+        self.DP.taskClose(shortname, taskname, money, number, workpalce, taskdetails, text)
         result = self.DP.taskCloseSucess('已关闭')
         print(result)
 
@@ -162,13 +170,15 @@ class DRG(unittest.TestCase):
 
     def test_drg_018(self):
         '''确认充值申请'''
-        self.DP.addPay('10')
+        money = 100
+        self.DP.addPay(money)
         result = self.DP.addPaySucess('成功')
         print(result)
 
     def test_drg_019(self):
         '''充值订单驳回'''
-        self.DP.addPayFail('20')
+        money = 100
+        self.DP.addPayFail(money)
         result = self.DP.addPayFailSucess('异议驳回')
         print(result)
 
@@ -184,6 +194,38 @@ class DRG(unittest.TestCase):
         result = self.DP.loanDetailsSucess('放款详情')
         print(result)
 
+    def test_drg_022(self):
+        '''上传完税证明'''
+        self.DP.upLoadProve()
+        result = self.DP.upLoadProveSucess('[重传完税证明]')
+        print(result)
+
+    def test_drg_023(self):
+        '''批量放款记录页面'''
+        self.DP.banthLoan()
+        result = self.DP.banthLoanSucess('批量放款记录')
+        print(result)
+
+    def test_drg_024(self):
+        '''批次放款记录'''
+        self.DP.banthLoan1()
+        result = self.DP.banthLoan1Sucess('批次放款记录')
+        print(result)
+
+    def test_drg_025(self):
+        '''通过批次号查询放款订单'''
+        result = self.DP.checkBanthLoan()
+        print(result)
+
+    def test_drg_026(self):
+        '''赏金页面'''
+        self.DP.money()
+        result = self.DP.moneySucess('赏金')
+        print(result)
+
+
+
+
 
 
     @classmethod
@@ -194,8 +236,6 @@ if __name__ == '__main__':
     driver = webdriver.Chrome()
     url = 'https://spman.shb02.net/admin/login'
     a = DRG(driver)
-    a.test_drg_001()
-    a.test_drg_002()
-    a.test_drg_003()
+
 
 

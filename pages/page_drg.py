@@ -92,6 +92,7 @@ class drg_pages(Base):
     add_task_3 = ('xpath','//table/tr[2]/td[2]/span/div[1]/div/div/div[1]/input')
     add_task_4 = ('xpath','//*[@placeholder="发包方简称"]')
     add_task_5 = ('xpath','//*[@id="app"]/section/div[2]/section/form/table/tr[2]/td[2]/span/div[2]/div/div[2]/div[1]/form/div[3]/div/button')
+    add_task_5_1 = ('xpath','//*[@id="app"]/section/div[2]/section/form/table/tr[2]/td[2]/span/div[2]/div/div[2]/div[2]/div[3]/table/tbody/tr/td[1]/div/label/span/span')
     add_task_6 = ('xpath','//*[@id="app"]/section/div[2]/section/form/table/tr[2]/td[2]/span/div[2]/div/div[3]/div/button[2]')
     add_task_7 = ('xpath','//*[@id="app"]/section/div[2]/section/form/table/tr[3]/td[2]/div/input')
     add_task_8 = ('xpath','//*[@id="app"]/section/div[2]/section/form/table/tr[4]/td[2]/div[1]/label[6]/span[1]/span')
@@ -117,8 +118,12 @@ class drg_pages(Base):
     task_close6 = ('xpath','//*[@id="app"]/section/div[2]/section/div[2]/div[3]/table/tbody/tr[1]/td[3]/div')
     task_close7 = ('xpath','//*[@id="app"]/section/div[2]/section/div[2]/div[3]/table/tbody/tr[1]/td[9]/div/button[3]/span')
     task_close8 = ('xpath','/html/body/div[4]/div/div[3]/button[2]')
-    task_close9 = ('xpath','//*[@id="app"]/section/div[2]/section/div[1]/form/div[3]/div/div/input')
-    task_close10 = ('xpath','//*[@id="app"]/section/div[2]/section/div[1]/form/div[6]/div/button')
+    task_close9 = ('xpath','//li[text()="新增任务"]')
+    task_close10 = ('xpath','//li[text()="任务管理"]')
+
+    task_close11 = ('xpath','//*[@id="app"]/section/div[2]/section/div[1]/form/div[3]/div/div/input')
+    task_close12 = ('xpath','//*[@id="app"]/section/div[2]/section/div[1]/form/div[6]/div/button')
+    task_state = ('xpath', '//*[@id="app"]/section/div[2]/section/div[2]/div[3]/table/tbody/tr[1]/td[7]/div/span')
     task_close_sucess = ('xpath','//*[@id="app"]/section/div[2]/section/div[2]/div[3]/table/tbody/tr/td[7]/div/span')
     # 016 跳转付款记录页面
     pay1 = ('xpath','//*[text()="发包方付款管理"]')
@@ -137,7 +142,7 @@ class drg_pages(Base):
     add_pay3 = ('xpath','//*[@class="el-select-dropdown__item hover"]/span')
     add_pay4 = ('xpath','//*[@id="app"]/section/div[2]/section/div[1]/form/div[8]/div/button')
     #判断是否详情，有执行后面操作，没有提示：暂无充值记录
-    no_add_pay1 = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr/td[1]/div/div')
+    no_add_pay1 = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/div/span')
     add_pay5 = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr[1]/td[10]/div/button/span')
     add_pay6 = ('xpath','//*[@id="app"]/section/div[2]/section/div[2]/button[1]')
     add_pay7 = ('xpath','//*[@placeholder="选择日期时间"]')
@@ -157,15 +162,40 @@ class drg_pages(Base):
     loan_details1 = ('xpath','//*[@id="menu"]/li[4]/div/span')
     loan_details2 = ('xpath','//*[@id="menu"]/li[4]/ul/li[1]')
     loan_details3 = ('xpath','//*[@id="app"]/section/div[2]/section/div[1]/form/div[2]/div/div/input')
-    loan_details4 = ('xpath','//*[@id="app"]/section/div[2]/section/div[1]/form/div[8]/div/button[1]')
-    loan_details5 = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr[1]/td[12]/div/button[1]/span')
+    loan_details4 = ('xpath','//*[text()="查询"]')
+    loan_details5 = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr[1]/td[12]/div/button[1]')
     loan_details_sucess = ('xpath','//*[@id="app"]/section/div[2]/section/h2')
     # 022 上传完税证明
-    upload_prove4 = ('xpath','//*[@id="app"]/section/div[2]/section/div[1]/form/div[7]/div/div/div[1]/input')
+    upload_prove4 = ('xpath','//*[@placeholder="放款状态"]')
     upload_prove5 = ('xpath','/html/body/div[3]/div/div[1]/ul/li[1]/span')
-    upload_prove6 = ('xpath','//*[@id="app"]/section/div[2]/section/div[1]/form/div[8]/div/button[1]')
+    upload_prove6 = ('xpath','//*[text()="查询"]')
     upload_prove7 = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr[1]/td[12]/div/label/input')
-    upload_prove_sucess = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr[1]/td[12]/div/label/text()')
+    upload_prove_sucess = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr[1]/td[12]/div/label')
+    # 023 批量放款记录页面
+    banth_loan1 = ('xpath','//*[@id="menu"]/li[4]/div/span')
+    banth_loan2 = ('xpath','//*[@id="menu"]/li[4]/ul/li[2]')
+    banth_loan_sucess = ('xpath','//*[@id="app"]/section/nav/div/span[3]/span[1]')
+    # 024 批次放款记录
+    banth_loan3 = ('xpath', '//*[@id="app"]/section/div[2]/section/div[1]/form/div[1]/div/div/input')
+    banth_loan4 = ('xpath', '//*[@id="app"]/section/div[2]/section/div[1]/form/div[6]/div/button')
+    banth_loan5 = ('xpath', '//*[@id="app"]/section/div[2]/section/div[2]/div[3]/table/tbody/tr[1]/td[10]/div/button[1]/span')
+    banth_loan_sucess1 = ('xpath', '//*[@id="app"]/section/nav/div/span[3]/span[1]/a')
+    #025 通过批次号查询放款订单
+    check_banth_loan3 = ('xpath','//*[@id="app"]/section/div[2]/section/div[1]/form/div[1]/div/div/input')
+    check_banth_loan3_1 = ('xpath','//*[@id="app"]/section/div[2]/section/div[1]/form/div[6]/div/button')
+    check_banth_loan4_number = ('xpath','//*[@id="app"]/section/div[2]/section/div[2]/div[3]/table/tbody/tr[1]/td[4]/div')
+    check_banth_loan5 = ('xpath','//*[@id="app"]/section/div[2]/section/div[1]/form/div[3]/div/div/input')
+    check_banth_loan6 = ('xpath','//*[@id="app"]/section/div[2]/section/div[1]/form/div[6]/div/button')
+    check_banth_loan_sucess2 = ('xpath','//*[@id="app"]/section/div[2]/section/div[2]/div[3]/table/tbody/tr[1]/td[4]/div')
+    #026 赏金记录页面
+    money1 = ('xpath','//*[@id="menu"]/li[5]/div/span')
+    money2 = ('xpath','//*[@id="menu"]/li[5]/ul/li')
+    money_sucess = ('xpath','//*[@id="app"]/section/nav/div/span[2]/span[1]/a')
+
+
+
+
+
 
 
 
@@ -343,6 +373,8 @@ class drg_pages(Base):
         self.sendKeys(self.add_task_4,shortname)
         self.click(self.add_task_5)
         time.sleep(1)
+        self.click(self.add_task_5_1)
+        time.sleep(1)
         self.click(self.add_task_6)
         time.sleep(1)
         self.sendKeys(self.add_task_7,taskname)
@@ -382,9 +414,10 @@ class drg_pages(Base):
         return result
 
     #  015 关闭任务
-    #1.点击任务管理、2.点击任务管理、3.点击任务状态、4.点击已发布、5.点击查询、
+    #1.点击任务管理、2.点击任务管理、3.点击任务状态、4.点击已发布、5.点击查询、（判断：是否有已发布任务，有获取第一个任务标题，执行后面的步骤。如果是没有任务的情况：新增一个任务成功后，
+    # 从第三个步骤开始执行后面的步骤。）
     # 6.获取第一个任务标题、7.点击第一个任务关闭、8.点击确定、9.点击新增任务、10点击任务管理、11.输入任务标题、12.点击查询
-    def taskClose(self):
+    def taskClose(self,shortname,taskname,money,number,workpalce,taskdetails,text):
         self.login()
         self.click(self.add_task_1)
         time.sleep(1)
@@ -393,16 +426,32 @@ class drg_pages(Base):
         time.sleep(2)
         self.click(self.task_close4)
         self.click(self.task_close5)
-        taskname = self.findEle(self.task_close6).text
-        self.click(self.task_close7)
-        time.sleep(1)
-        self.click(self.task_close8)
-        time.sleep(1)
-        self.click(self.add_task_2)
-        time.sleep(1)
-        self.click(self.task_countorl)
-        self.sendKeys(self.task_close9,taskname)
-        self.click(self.task_close10)
+        #如果查询出来有已发布的任务
+        result = self.is_text(self.task_state,text)
+        if result == True:
+            taskname1 = self.findEle(self.task_close6).text
+            self.click(self.task_close7)
+            self.click(self.task_close8)
+            self.click(self.task_close9)
+            time.sleep(1)
+            self.click(self.task_close10)
+            self.sendKeys(self.task_close11,taskname1)
+            self.click(self.task_close12)
+        else:
+            self.addTask(shortname,taskname,money,number,workpalce,taskdetails)
+            self.click(self.task_close3)
+            time.sleep(2)
+            self.click(self.task_close4)
+            self.click(self.task_close5)
+            taskname1 = self.findEle(self.task_close6).text
+            self.click(self.task_close7)
+            self.click(self.task_close8)
+            self.click(self.task_close9)
+            time.sleep(1)
+            self.click(self.task_close10)
+            self.sendKeys(self.task_close11, taskname1)
+            self.click(self.task_close12)
+
     def taskCloseSucess(self,text):
         result = self.is_text(self.task_close_sucess,text)
         return result
@@ -440,16 +489,8 @@ class drg_pages(Base):
         self.driver.find_element_by_xpath('//*[@id="app"]/section/div[2]/section/div[1]/form/div[6]/div/div/div[1]/input').send_keys(Keys.ENTER)
         self.click(self.add_pay4)
         #判断是否有记录，在执行后面操作
-        noadd1 = self.driver.find_element_by_xpath('//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr/td[1]/div/div').text
-        if noadd1 == 1:
-            self.click(self.add_pay5)
-            self.click(self.add_pay6)
-            self.click(self.add_pay7)
-            time.sleep(1)
-            self.click(self.add_pay8)
-            self.click(self.add_pay9)
-            print('处理成功')
-        else :
+        noadd1 = self.is_text(self.no_add_pay1,'暂无数据')
+        if noadd1 == True:
             self.MC.add_recharge(money)
             self.pay()
             self.clear(self.add_pay1)
@@ -470,6 +511,15 @@ class drg_pages(Base):
             self.click(self.add_pay8)
             self.click(self.add_pay9)
             print('新增充值处理成功')
+        else :
+            self.click(self.add_pay5)
+            self.click(self.add_pay6)
+            self.click(self.add_pay7)
+            time.sleep(1)
+            self.click(self.add_pay8)
+            self.click(self.add_pay9)
+            print('处理成功')
+
     def addPaySucess(self,text):
         result = self.is_text(self.add_pay_sucess,text)
         return result
@@ -488,13 +538,8 @@ class drg_pages(Base):
         self.driver.find_element_by_xpath(
             '//*[@id="app"]/section/div[2]/section/div[1]/form/div[6]/div/div/div[1]/input').send_keys(Keys.ENTER)
         self.click(self.add_pay4)
-        noadd1 = self.driver.find_element_by_xpath(
-            '//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr/td[1]/div/div').text
-        if noadd1 == 1:
-            self.click(self.add_pay5)
-            self.click(self.add_payfail1)
-            self.click(self.add_payfail2)
-        else:
+        noadd1 = self.is_text(self.no_add_pay1,'暂无数据')
+        if noadd1 == True:
             self.MC.add_recharge(money)
             self.pay()
             self.clear(self.add_pay1)
@@ -511,6 +556,13 @@ class drg_pages(Base):
             self.click(self.add_pay5)
             self.click(self.add_payfail1)
             self.click(self.add_payfail2)
+            print('新增充值驳回成功')
+        else:
+            self.click(self.add_pay5)
+            self.click(self.add_payfail1)
+            self.click(self.add_payfail2)
+            print('驳回成功')
+
     def addPayFailSucess(self,text):
         result = self.is_text(self.add_payfail_sucess, text)
         return result
@@ -528,6 +580,7 @@ class drg_pages(Base):
     #021 放款记录详情页面
     def loanDetails(self):
         self.login()
+        self.driver.maximize_window()
         self.click(self.loan_details1)
         time.sleep(1)
         self.click(self.loan_details2)
@@ -548,19 +601,60 @@ class drg_pages(Base):
         self.clear(self.loan_details3)
         self.click(self.upload_prove4)
         time.sleep(1)
-        self.driver.find_element_by_xpath('//*[@id="app"]/section/div[2]/section/div[1]/form/div[6]/div/div/div[1]/input').send_keys(Keys.DOWN)
-        self.driver.find_element_by_xpath('//*[@id="app"]/section/div[2]/section/div[1]/form/div[6]/div/div/div[1]/input').send_keys(Keys.ENTER)
+        self.driver.find_element_by_xpath('//*[@placeholder="放款状态"]').send_keys(Keys.DOWN)
+        self.driver.find_element_by_xpath('//*[@placeholder="放款状态"]').send_keys(Keys.ENTER)
         time.sleep(1)
         self.click(self.upload_prove6)
-        #判断是否已经上传，已上传的话重新再传一次
-        cc = self.driver.find_element_by_xpath('//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr[1]/td[12]/div/label').text
-        if cc == '[重传完税证明]':
-            self.sendKeys(self.upload_prove7,'C:\\Users\\a\\Desktop\\新建文件夹\\6.png')
-        else:
-            self.sendKeys(self.upload_prove7, 'C:\\Users\\a\\Desktop\\新建文件夹\\6.png')
+        self.sendKeys(self.upload_prove7,'C:\\Users\\a\\Desktop\\新建文件夹\\6.png')
     def upLoadProveSucess(self,text):
         result = self.is_text(self.upload_prove_sucess,text)
         return result
+
+    # 023 批量放款记录页面
+    def banthLoan(self):
+        self.login()
+        self.click(self.banth_loan1)
+        time.sleep(1)
+        self.click(self.banth_loan2)
+    def banthLoanSucess(self,text):
+        result = self.is_text(self.banth_loan_sucess,text)
+        return result
+    # 024 批次放款记录
+    def banthLoan1(self):
+        self.login()
+        self.banthLoan()
+        self.clear(self.banth_loan3)
+        self.click(self.banth_loan4)
+        self.click(self.banth_loan5)
+    def banthLoan1Sucess(self,text):
+        result = self.is_text(self.banth_loan_sucess1, text)
+        return result
+    #025 通过批次号查询放款订单
+    def checkBanthLoan(self):
+        self.login()
+        self.banthLoan()
+        self.clear(self.check_banth_loan3)
+        self.click(self.check_banth_loan3_1)
+        number = self.is_get_text(self.check_banth_loan4_number)
+        self.sendKeys(self.check_banth_loan5,number)
+        self.click(self.check_banth_loan6)
+        result = self.is_text(self.check_banth_loan_sucess2, number)
+        return result
+    #026 赏金页面
+    def money(self):
+        self.login()
+        self.click(self.money1)
+        time.sleep(1)
+        self.click(self.money2)
+    def moneySucess(self,text):
+        result = self.is_text(self.money_sucess,text)
+        return result
+
+
+
+
+
+
 
 
 
@@ -601,8 +695,15 @@ if __name__ == '__main__':
     # result = DP.addTaskSucess(taskname)
     # print(result)
     #--------------------------------------------
-    DP.upLoadProve()
-    result = DP.upLoadProveSucess('[重传完税证明]')
+    shortname = '极限传媒'
+    taskname = '海绵宝宝111'
+    money = '500'
+    number = '20'
+    workpalce = '海底世界'
+    taskdetails = '到海底世界看海绵宝宝'
+    text = '已发布'
+    DP.taskClose(shortname,taskname,money,number,workpalce,taskdetails,text)
+    result = DP.taskCloseSucess('已关闭')
     print(result)
 
 

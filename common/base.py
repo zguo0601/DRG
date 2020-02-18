@@ -56,6 +56,10 @@ class Base():
     def clear(self,locator):
         ele = self.findEle(locator)
         ele.clear()
+     #获取文本信息
+    def is_get_text(self,locator):
+        text = self.findEle(locator).text
+        return text
 
     #判断元素是否存在,存在返回Ture,不存在返回False
     def isElementExist(self,locator):

@@ -45,6 +45,16 @@ if __name__ == '__main__':
     runner = HTMLTestRunner.HTMLTestRunner(stream=fp,title=u'达人馆',description=u'测试报告')
     runner.run(discover)
     fp.close()
+    #------------------------本地代码测试路径--------------------------------
+    # casePath = "E:\web_auto\case"
+    # rule = "test*.py"
+    # discover = unittest.defaultTestLoader.discover(start_dir=casePath, pattern=rule)
+    # print(discover)
+    # reportPath = "E:\\web_auto\\report\\result" + ".html"
+    # fp = open(reportPath, 'wb')
+    # runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title=u'达人馆', description=u'测试报告')
+    # runner.run(discover)
+    # fp.close()
     # 报告路径
     #new_report = reportPath
     # 发送报告
