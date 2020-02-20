@@ -309,6 +309,30 @@ class DRG(unittest.TestCase):
         result = self.DP.tdBillsSucess('交易日')
         print(result)
 
+    def test_drg_039(self):
+        '''打开我的账户页面'''
+        self.DP.accountManagement()
+        result = self.DP.accountManagementSucess('账户信息')
+        print(result)
+
+    def test_drg_040(self):
+        '''打开账户安全页面'''
+        self.DP.accountSecurity()
+        result = self.DP.accountSecuritySucess('账户安全')
+        print(result)
+
+    def test_drg_041(self):
+        '''打开修改登录密码页面'''
+        self.DP.resetLoginPassword()
+        result = self.DP.resetLoginPasswordSucess('修改登录密码')
+        print(result)
+
+    def test_drg_042(self):
+        '''打开重新设置手机号码页面'''
+        self.DP.resetPhone()
+        result = self.DP.resetPhoneSucess('修改手机号')
+        print(result)
+
 
 
 

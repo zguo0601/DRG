@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="72782b61-1108-4fea-ba2d-44e8cddf854e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/report/result.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_all.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_all.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case/test_drg.py" beforeDir="false" afterPath="$PROJECT_DIR$/case/test_drg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/page_drg.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/page_drg.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +51,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.lianxi">
+  <component name="RunManager" selected="Python.page_drg">
     <configuration name="base" type="PythonConfigurationType" factoryName="Python">
       <module name="web_auto" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -166,8 +166,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.lianxi" />
         <item itemvalue="Python.page_drg" />
+        <item itemvalue="Python.lianxi" />
         <item itemvalue="Python.run_all" />
         <item itemvalue="Python tests.Unittests for test_drg.DRG.test_drg_030" />
         <item itemvalue="Python tests.Unittests for test_drg.DRG.test_drg_029" />

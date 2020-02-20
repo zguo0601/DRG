@@ -299,6 +299,26 @@ class drg_pages(Base):
     TD_bills1 = ('xpath','//*[@id="menu"]/li[7]/div/span')
     TD_bills2 = ('xpath','//*[@id="menu"]/li[7]/ul/li[2]')
     TD_bills3 = ('xpath','//*[@id="app"]/section/div[2]/section/div[2]/div[2]/table/thead/tr/th[2]/div')
+    # 039 打开我的账户页面
+    account_management1 = ('xpath','//*[@id="menu"]/li[9]/div/span')
+    account_management2 = ('xpath','//*[@id="menu"]/li[9]/ul/li[1]')
+    account_management3 = ('xpath','//*[@id="app"]/section/div[2]/section/h2')
+
+    #040 账户安全
+    account_security1 = ('xpath','//*[@id="menu"]/li[9]/div/span')
+    account_security2 = ('xpath','//*[@id="menu"]/li[9]/ul/li[2]')
+    account_security3 = ('xpath','//*[@id="app"]/section/div[2]/section/div[1]/table/tr[1]/td')
+    # 041 打开重新支付密码页面
+    account_security4 = ('xpath','//*[@id="app"]/section/div[2]/section/div[1]/table/tr[2]/td[2]/button/span')
+    account_security5 = ('xpath','//*[@id="app"]/section/div[2]/section/div[2]/div/div[1]/span')
+    # 042 打开修改登录密码页面
+    account_security6 = ('xpath','//*[@id="app"]/section/div[2]/section/div[1]/table/tr[3]/td[2]/button/span')
+    account_security7 = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div/div[1]/span')
+    # 043 打开重新设置手机号码页面
+    account_security8 = ('xpath','//*[@id="app"]/section/div[2]/section/div[1]/table/tr[4]/td[2]/button/span')
+    account_security9 = ('xpath','//*[@id="app"]/section/div[2]/section/div[4]/div/div[1]/span')
+
+
 
 
 
@@ -984,7 +1004,51 @@ class drg_pages(Base):
     def tdBillsSucess(self,text):
         result = self.is_text(self.TD_bills3,text)
         return result
+    #------------打开我的账户页面---------------------------039
+    def accountManagement(self):
+        self.login()
+        self.click(self.account_management1)
+        time.sleep(1)
+        self.click(self.account_management2)
+    def accountManagementSucess(self,text):
+        result = self.is_text(self.account_management3,text)
+        return result
 
+    #------------打开账户安全页面----------------------------040
+    def accountSecurity(self):
+        self.login()
+        self.click(self.account_security1)
+        time.sleep(1)
+        self.click(self.account_security2)
+    def accountSecuritySucess(self,text):
+        result = self.is_text(self.account_security3,text)
+        return result
+
+    #--------------打开重新支付密码页面----------------------041
+    def resetPassword(self):
+        self.accountSecurity()
+        self.click(self.account_security4)
+    def resetPasswordSucess(self,text):
+        result = self.is_text(self.account_security4,text)
+        return result
+
+    #-----------打开修改登录密码页面------------------------042
+    def resetLoginPassword(self):
+        self.accountSecurity()
+        self.click(self.account_security6)
+    def resetLoginPasswordSucess(self,text):
+        result = self.is_text(self.account_security7,text)
+        return result
+
+    #---------打开重新设置手机号码页面--------------------------043
+    def resetPhone(self):
+        self.accountSecurity()
+        self.click(self.account_security8)
+    def resetPhoneSucess(self,text):
+        result = self.is_text(self.account_security9,text)
+        return result
+
+    #--------------------------------------------------------044
 
 
 
@@ -997,8 +1061,8 @@ class drg_pages(Base):
 if __name__ == '__main__':
     driver = webdriver.Chrome()
     DP = drg_pages(driver)
-    DP.tdBills()
-    result = DP.tdBillsSucess('交易日')
+    DP.resetPhone()
+    result = DP.resetPhoneSucess('修改手机号')
     print(result)
 
 
