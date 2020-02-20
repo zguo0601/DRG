@@ -4,6 +4,9 @@ from common.base import Base
 from selenium.webdriver.common.by import By
 from pages.yy_Loginfuc import LoginDrg
 import time
+from selenium.webdriver.common.keys import Keys
+from common.sf_xm import SF
+
 
 
 class Merchant(Base):
@@ -48,7 +51,22 @@ class Merchant(Base):
     apply_11 = ('xpath','//*[@placeholder="区域"]')
     apply_12 = ('xpath','/html/body/div[6]/div/div[1]/ul/li[1]/span')
     apply_13 = ('xpath','//*[@id="app"]/section/div[2]/section/div[4]/div/div[3]/div/button')
+    #确认充值
+    username1 = ('id', 'login_name')
+    password1 = ('id', 'password')
+    buttom = ('xpath', '/html/body/div[1]/div[1]/div/div/div/form/div[5]/a')
+    pay = ('xpath','//*[@id="menu"]/li[3]/div/span')
+    pay1 = ('xpath','//*[@id="menu"]/li[3]/ul/li')
+    add_pay1 = ('xpath', '//*[@placeholder="选择开始时间"]')
+    add_pay2 = ('xpath', '//*[@placeholder="付款状态"]')
+    add_pay4 = ('xpath', '//*[@id="app"]/section/div[2]/section/div[1]/form/div[8]/div/button')
+    add_pay5 = ('xpath', '//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr[1]/td[10]/div/button/span')
+    add_pay6 = ('xpath', '//*[@id="app"]/section/div[2]/section/div[2]/button[1]')
+    add_pay7 = ('xpath', '//*[@placeholder="选择日期时间"]')
+    add_pay8 = ('xpath', '//*[text()="此刻"]')
+    add_pay9 = ('xpath', '//*[@id="app"]/section/div[2]/section/div[5]/div/div[3]/div/button')
     #申请记录全选
+    record = ('xpath','//*[@id="app"]/section/div[2]/section/div[2]/div[2]/div[3]/div/span')
     apply_14 = ('xpath','//*[@id="app"]/section/div[2]/section/div[2]/div[2]/div[2]/table/thead/tr/th[1]/div/label/span/span')
     apply_15 = ('xpath','//*[@id="app"]/section/div[2]/section/div[6]/button')
     #确认提交
@@ -68,6 +86,7 @@ class Merchant(Base):
         self.LG = LoginDrg
         self.timeout = 20
         self.t = 1
+        self.sj = SF
 
 
 
@@ -123,16 +142,68 @@ class Merchant(Base):
         return result
 
     #开票申请
-    def apply_invoice(self):
+    def apply_invoice(self,text,money):
+        self.merchantLogin()
         self.click(self.apply_1)
         time.sleep(1)
         self.click(self.apply_2)
         #判断是否有邮箱地址，有则点击申请开票，无则添加邮寄地址
         numb = ('xpath','//table/tbody/tr/td[1]/div/div')
         r = self.is_text(numb,'1')
-        print(r)
         if r == True:
             self.click(self.apply_3)
+            # 判断是否有开票记录，有则提交，无则新增充值
+            record = self.is_text(self.record, text)
+            if record == True:
+                # 新增充值
+                self.add_recharge(money)
+                # 确认新增充值
+                self.driver.get('https://spman.shb02.net/admin/login')
+                self.sendKeys(self.username1, 'spman_admin')
+                self.sendKeys(self.password1, '111111')
+                self.click(self.buttom)
+                self.click(self.pay)
+                time.sleep(1)
+                self.click(self.pay1)
+                self.clear(self.add_pay1)
+                self.click(self.add_pay2)
+                time.sleep(1)
+                # self.click(self.add_pay3)
+                self.driver.find_element_by_xpath(
+                    '//*[@id="app"]/section/div[2]/section/div[1]/form/div[6]/div/div/div[1]/input').send_keys(
+                    Keys.DOWN)
+                self.driver.find_element_by_xpath(
+                    '//*[@id="app"]/section/div[2]/section/div[1]/form/div[6]/div/div/div[1]/input').send_keys(
+                    Keys.DOWN)
+                self.driver.find_element_by_xpath(
+                    '//*[@id="app"]/section/div[2]/section/div[1]/form/div[6]/div/div/div[1]/input').send_keys(
+                    Keys.ENTER)
+                self.click(self.add_pay4)
+                self.click(self.add_pay5)
+                self.click(self.add_pay6)
+                self.click(self.add_pay7)
+                time.sleep(1)
+                self.click(self.add_pay8)
+                self.click(self.add_pay9)
+                # 商户端提交发票申请
+                self.merchantLogin()
+                self.click(self.apply_1)
+                time.sleep(1)
+                self.click(self.apply_3)
+                time.sleep(1)
+                self.click(self.apply_14)
+                self.click(self.apply_15)
+                self.click(self.apply_16)
+                time.sleep(2)
+                self.click(self.apply_16)
+                print('-----无充值记录，商户充值--运营确认--商户提交开票信息----')
+            else:
+                self.click(self.apply_14)
+                self.click(self.apply_15)
+                self.click(self.apply_16)
+                time.sleep(2)
+                self.click(self.apply_16)
+                print('-------有充值记录，直接提交开票信息---------')
         else:
             self.click(self.apply_4)
             self.sendKeys(self.apply_5,'铁头')
@@ -150,11 +221,15 @@ class Merchant(Base):
             self.click(self.apply_12)
             self.click(self.apply_13)
             self.click(self.apply_3)
-        self.click(self.apply_14)
-        self.click(self.apply_15)
-        self.click(self.apply_16)
-        time.sleep(2)
-        self.click(self.apply_16)
+            print('----添加邮寄地址-------')
+
+
+
+
+
+
+
+
 
 
     #查询开票结果
@@ -176,6 +251,8 @@ class Merchant(Base):
 if __name__ == '__main__':
     driver = webdriver.Chrome()
     a = Merchant(driver)
-    a.add_recharge('123')
+    text = '暂无数据'
+    money = 50
+    a.apply_invoice(text,money)
     #a.driver.quit()
 

@@ -12,7 +12,7 @@ from common.sf_xm import SF
 class DRG(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.driver =  webdriver.Chrome()
+        cls.driver = webdriver.Chrome()
         cls.time = 10
         cls.t = 1
         cls.DP = drg_pages(cls.driver)
@@ -223,14 +223,105 @@ class DRG(unittest.TestCase):
         result = self.DP.moneySucess('赏金')
         print(result)
 
+    def test_drg_027(self):
+        '''赏金记录详情'''
+        self.DP.bountyRecord('暂无数据')
+        result = self.DP.bountyRecordSucess('赏金详情')
+        print(result)
+
+    def test_drg_028(self):
+        '''赏金单号查询'''
+        self.DP.bountyNumber('暂无数据')
+        result = self.DP.bountyNumberSucess('1')
+        print(result)
+
+    def test_drg_029(self):
+        '''销项发票处理:处理发票开票申请'''
+        text = '暂无数据'
+        money = self.sj.year()
+        starttime = time.strftime("%Y%m%d")
+        invoicecord = self.sj.phone()
+        invoicenumber = self.sj.phone()
+        tax_rate = '10'
+        express_number = self.sj.phone()
+        self.DP.invoiceManage(text, money, starttime, invoicecord, invoicenumber, tax_rate, express_number)
+        result = self.DP.invoiceManageSucess('已处理')
+        print(result)
+
+    def test_drg_030(self):
+        '''已处理发票详情页'''
+        text = '暂无数据'
+        money = self.sj.year()
+        starttime = time.strftime("%Y%m%d")
+        invoicecord = self.sj.phone()
+        invoicenumber = self.sj.phone()
+        tax_rate = '10'
+        express_number = self.sj.phone()
+        self.DP.finishInvoice(text, money, starttime, invoicecord, invoicenumber, tax_rate, express_number)
+        result = self.DP.finishInvoiceSucess('已开发票详情')
+        print(result)
+
+    def test_drg_031(self):
+        '''打开发包方钱包页面'''
+        self.DP.fbfWallet()
+        result = self.DP.fbfWalletSucess('发包方')
+        print(result)
+
+    def test_drg_032(self):
+        '''打开发包方详情页面'''
+        self.DP.fbfWalletDetails()
+        result = self.DP.fbfWalletDetailsSucess('发包方钱包详情')
+        print(result)
+
+    def test_drg_033(self):
+        '''打开承揽方钱包页面'''
+        self.DP.clfWallet()
+        result = self.DP.clfWalletSucess('承揽方')
+        print(result)
+
+    def test_drg_034(self):
+        '''打开承揽方钱包详情页面'''
+        self.DP.clfWalletDetails()
+        result = self.DP.clfWalletDetailsSucess('承揽方钱包详情')
+        print(result)
+
+    def test_drg_035(self):
+        '''打开平台钱包页面'''
+        self.DP.ptWallet()
+        result = self.DP.ptWalletSucess('综合服务费钱包-系统')
+        print(result)
+
+    def test_drg_036(self):
+        '''打开通道钱包页面'''
+        self.DP.tdWallet()
+        result = self.DP.tdWalletSucess('通道')
+        print(result)
+
+    def test_drg_037(self):
+        '''打开商户账单页面'''
+        self.DP.merchantsBills()
+        result = self.DP.merchantsBillsSucess('账单月')
+        print(result)
+
+    def test_drg_038(self):
+        '''打开通道账单页面'''
+        self.DP.tdBills()
+        result = self.DP.tdBillsSucess('交易日')
+        print(result)
 
 
 
 
 
-    @classmethod
-    def tearDownClass(cls):
-        cls.driver.quit()
+
+
+
+
+
+
+    # @classmethod
+    # def tearDownClass(cls):
+    #     cls.driver.quit()
 
 if __name__ == '__main__':
     driver = webdriver.Chrome()

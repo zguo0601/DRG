@@ -35,26 +35,26 @@ def new_report(testreport):
 
 if __name__ == '__main__':
     #用例路径和匹配文件规则(配置jenkinis的工作目录)
-    casePath = "E:\jk_work\workspace\web_auto_drg\case"
-    rule = "test*.py"
-    discover = unittest.defaultTestLoader.discover(start_dir=casePath,pattern=rule)
-    print(discover)
-    #测试报告导出路劲，报告文件名称(配置jenkinis的工作目录)
-    reportPath = "E:\\jk_work\\workspace\\web_auto_drg\\report\\result"+".html"
-    fp = open(reportPath,'wb')
-    runner = HTMLTestRunner.HTMLTestRunner(stream=fp,title=u'达人馆',description=u'测试报告')
-    runner.run(discover)
-    fp.close()
-    #------------------------本地代码测试路径--------------------------------
-    # casePath = "E:\web_auto\case"
+    # casePath = "E:\jk_work\workspace\web_auto_drg\case"
     # rule = "test*.py"
-    # discover = unittest.defaultTestLoader.discover(start_dir=casePath, pattern=rule)
+    # discover = unittest.defaultTestLoader.discover(start_dir=casePath,pattern=rule)
     # print(discover)
-    # reportPath = "E:\\web_auto\\report\\result" + ".html"
-    # fp = open(reportPath, 'wb')
-    # runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title=u'达人馆', description=u'测试报告')
+    # #测试报告导出路劲，报告文件名称(配置jenkinis的工作目录)
+    # reportPath = "E:\\jk_work\\workspace\\web_auto_drg\\report\\result"+".html"
+    # fp = open(reportPath,'wb')
+    # runner = HTMLTestRunner.HTMLTestRunner(stream=fp,title=u'达人馆',description=u'测试报告')
     # runner.run(discover)
     # fp.close()
+    #------------------------本地代码测试路径--------------------------------
+    casePath = "E:\web_auto\case"
+    rule = "test*.py"
+    discover = unittest.defaultTestLoader.discover(start_dir=casePath, pattern=rule)
+    print(discover)
+    reportPath = "E:\\web_auto\\report\\result" + ".html"
+    fp = open(reportPath, 'wb')
+    runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title=u'达人馆', description=u'测试报告')
+    runner.run(discover)
+    fp.close()
     # 报告路径
     #new_report = reportPath
     # 发送报告

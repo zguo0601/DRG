@@ -56,7 +56,7 @@ class SF():
         else:
             return five
 
-
+    #随机身份证号码
     def sf(self):
         first = self.regiun()
         second = self.year()
@@ -65,7 +65,7 @@ class SF():
         last = self.randoms()
         IDcard = str(first)+str(second)+str(three)+str(four)+str(last)
         return IDcard
-
+    #随机姓名
     def name(self):
         xing = '赵钱孙李周吴郑王冯陈褚卫蒋沈韩杨朱秦尤许何吕施张孔曹严华金魏陶姜'
         ming = '豫章故郡洪都新府星分翼轸地接衡庐襟三江而带五湖'
@@ -73,20 +73,20 @@ class SF():
         M = ''.join(random.choice(ming) for i in range(2))#
         n = X+M
         return n
-
+    #随机手机号码
     def phone(self):
         headList = ["130", "131", "132", "133", "134", "135", "136", "137", "138", "139",
                     "147", "150", "151", "152", "153", "155", "156", "157", "158", "159",
                     "186", "187", "188", "189"]
         return (random.choice(headList) + "".join(random.choice("0123456789") for i in range(8)))
-
+    #随机银行卡
     def bankcard(self):
         card_id = '62'
         for i in range(17):
             ran = str(random.randint(0, 9))
             card_id += ran
         return card_id
-
+    #随机电子邮箱
     def get_email(self):
         email_suf = random.choice(
             ['@163.com', '@qq.com', '@126.com', '@sina.com', '@sina.cn', '@soho.com', '@yeah.com'])

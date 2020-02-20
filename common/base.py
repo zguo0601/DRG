@@ -120,11 +120,15 @@ class Base():
 
     #判断文本对象,返回的是布尔值，判断某个元素中的text是否包含了预期的字符串
     def is_text(self,locator,_text):
-        try:
-            result = WebDriverWait(self.driver, self.timeout, self.t).until(EC.text_to_be_present_in_element(locator,_text))
-            return result
-        except:
-            return False
+        if not isinstance(locator,tuple):
+            print('locator参数类型错误，必须传元组类型: loc = ("id","value")')
+        else:
+            print(("正在定位元素信息：定位方式->%s,value值->%s"%(locator[0],locator[1])))
+            try:
+                result = WebDriverWait(self.driver, self.timeout, self.t).until(EC.text_to_be_present_in_element(locator,_text))
+                return result
+            except:
+                return False
 
     #鼠标悬停
     def move_to_element(self,locator):
