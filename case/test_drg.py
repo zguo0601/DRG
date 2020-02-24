@@ -64,7 +64,7 @@ class DRG(unittest.TestCase):
         address = '福州仓山万达'
         phone = tel
         businesslicense = long_timestr
-        legalperson = name
+        registeredmoney = '1000000'
         openname = name
         banknumber = bankcard
         ratepayernumber = long_timestr
@@ -74,7 +74,7 @@ class DRG(unittest.TestCase):
         platform = '抖音'
         service = '音视频服务'
         self.DP.addFbf(shortname,linkname,email,address,phone,
-                       businesslicense,legalperson,
+                       businesslicense,registeredmoney,
                        openname,banknumber,
                        ratepayernumber,worktelphone,invoicecontent,workbusiness,platform,service)
         result = self.DP.addFbf_sucess(long_timestr)
@@ -322,30 +322,138 @@ class DRG(unittest.TestCase):
         print(result)
 
     def test_drg_041(self):
+        '''打开重新支付密码页面'''
+        self.DP.resetPassword()
+        result = self.DP.resetPasswordSucess('重新设置支付密码')
+        print(result)
+
+    def test_drg_042(self):
         '''打开修改登录密码页面'''
         self.DP.resetLoginPassword()
         result = self.DP.resetLoginPasswordSucess('修改登录密码')
         print(result)
 
-    def test_drg_042(self):
+    def test_drg_043(self):
         '''打开重新设置手机号码页面'''
         self.DP.resetPhone()
         result = self.DP.resetPhoneSucess('修改手机号')
         print(result)
 
+    def test_drg_044(self):
+        '''打开员工管理页面'''
+        self.DP.staffManagement()
+        result = self.DP.staffManagementSucess('员工账号')
+        print(result)
+
+    def test_drg_045(self):
+        '''新增员工'''
+        name = self.sj.name()
+        phone = self.sj.phone()
+        psd = '111111'
+        psd1 = '111111'
+        self.DP.addStaff(name, phone, psd, psd1)
+        result = self.DP.addStaffSucess(name)
+        print(result)
+
+    def test_drg_046(self):
+        '''修改员工密码'''
+        psd = '111111'
+        psd1 = '111111'
+        self.DP.resetStaffPassword(psd, psd1)
+        result = self.DP.resetStaffPasswordSucess('修改成功')
+        print(result)
+
+    def test_drg_047(self):
+        '''修改员工姓名'''
+        name = self.sj.name()
+        self.DP.resetStaffName(name)
+        result = self.DP.resetStaffNameSucess(name)
+        print(result)
+
+    def test_drg_048(self):
+        '''删除员工'''
+        name = self.sj.name()
+        phone = self.sj.phone()
+        psd = '111111'
+        psd1 = '111111'
+        self.DP.deleteStaff(name, phone, psd, psd1)
+
+    def test_drg_049(self):
+        '''打开员工角色页面'''
+        self.DP.theRole()
+        result = self.DP.theRoleSucess('角色名称')
+        print(result)
+
+    def test_drg_050(self):
+        '''系统设置页面'''
+        self.DP.sysSet()
+        result = self.DP.sysSetSucess('系统设置')
+        print(result)
+
+    def test_drg_051(self):
+        '''打开客服信息页面'''
+        self.DP.infoService()
+        result = self.DP.infoServiceSucess('客服信息')
+        print(result)
+
+    def test_drg_052(self):
+        '''打开发票类目页面'''
+        self.DP.invoiceCategory()
+        result = self.DP.invoiceCategorySucess('+添加主分类')
+        print(result)
+
+    def test_drg_053(self):
+        '''打开发票销方信息'''
+        self.DP.InvoiceXf()
+        result = self.DP.InvoiceXfSucess('发票销方信息')
+        print(result)
+
+    def test_drg_054(self):
+        '''基础数据页面'''
+        self.DP.basicData()
+        result = self.DP.basicDataSucess('+新增行业')
+        print(result)
+
+    def test_drg_055(self):
+        '''打开通道管理页面'''
+        self.DP.channelManagement()
+        result = self.DP.channelManagementSucess('通道')
+        print(result)
+
+    def test_drg_056(self):
+        '''打开通道详情页面'''
+        self.DP.channelDetails()
+        result = self.DP.channelDetailsSucess('通道详情')
+        print(result)
+
+    def test_drg_057(self):
+        '''打开公告管理页面'''
+        self.DP.notice()
+        result = self.DP.noticeSucess('+新增公告')
+        print(result)
+
+    def test_drg_058(self):
+        '''新增公告'''
+        bt = self.sj.name()
+        xq = self.sj.name()
+        self.DP.addNotice(bt, xq)
+        result = self.DP.addNoticeSucess(bt)
+        print(result)
+
+    def test_drg_059(self):
+        '''删除公告'''
+        bt = self.sj.name()
+        xq = self.sj.name()
+        self.DP.deleteNotice(bt, xq)
+        result = self.DP.deleteNoticeSucess('删除成功')
+        print(result)
 
 
 
 
-
-
-
-
-
-
-    # @classmethod
-    # def tearDownClass(cls):
-    #     cls.driver.quit()
+    @classmethod
+    def tearDownClass(cls):
+        cls.driver.quit()
 
 if __name__ == '__main__':
     driver = webdriver.Chrome()

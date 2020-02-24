@@ -4,21 +4,22 @@ from pages.yy_Loginfuc import LoginDrg
 import time
 import random
 from selenium.webdriver.common.action_chains import ActionChains
+import pytesseract
+from PIL import Image
+
+pytesseract.pytesseract.tesseract_cmd = r'E:\tesseract-ocr\tesseract.exe'  # 执行的路径
+image1 = Image.open('E:\\web_auto\\pages\\5.jpg')  # 识别的图片路径
+text1 = pytesseract.image_to_string(image1)  # 转换成文本
+print(text1)
 
 
 
 
 
 
-driver = webdriver.Chrome()
 
-# a = LoginDrg(driver)
-# b = Base(driver)
-#
-driver.get("https://www.baidu.com")
-mouse = driver.find_element_by_link_text("设置")
-ActionChains(driver).move_to_element(mouse).perform()
-driver.find_element_by_link_text("高级搜索").click()
+
+
 
 
 

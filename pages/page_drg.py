@@ -38,7 +38,7 @@ class drg_pages(Base):
     #执照信息：
     upload_license = ('xpath','//*[@class="upload-file"]')
     business_license = ('xpath','//*[@id="app"]/section/div[2]/section/form/table/tr[3]/td[2]/div/input')
-    legal_person = ('xpath','//table/tr[6]/td[2]/div/input')
+    registered_money = ('xpath','//*[@id="app"]/section/div[2]/section/form/table/tr[7]/td[2]/div/input')
     live = ('xpath','//label/span[1]/span')
     #结算账户
     open_province = ('xpath','//*[@placeholder="省份"]')
@@ -318,6 +318,89 @@ class drg_pages(Base):
     account_security8 = ('xpath','//*[@id="app"]/section/div[2]/section/div[1]/table/tr[4]/td[2]/button/span')
     account_security9 = ('xpath','//*[@id="app"]/section/div[2]/section/div[4]/div/div[1]/span')
 
+    # 044 打开员工管理页面
+    account_security10 = ('xpath','//*[@id="menu"]/li[9]/ul/li[3]')
+    account_security11 = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[2]/table/thead/tr/th[2]/div')
+
+    #45 新增员工
+    add_staff1 = ('xpath','//*[@id="app"]/section/div[2]/section/div[2]/button/span')
+    add_staff2 = ('xpath','//*[@id="app"]/section/div[2]/section/div[5]/div/div[2]/form/div[1]/div/div/input')
+    add_staff3 = ('xpath','//*[@id="app"]/section/div[2]/section/div[5]/div/div[2]/form/div[2]/div/div/input')
+    add_staff4 = ('xpath','//*[@id="app"]/section/div[2]/section/div[5]/div/div[2]/form/div[3]/div/div/input')
+    add_staff5 = ('xpath','//*[@id="app"]/section/div[2]/section/div[5]/div/div[2]/form/div[4]/div/div/input')
+    add_staff6 = ('xpath','//*[@id="app"]/section/div[2]/section/div[5]/div/div[2]/form/div[5]/div/div/div/div/div[1]/input')
+    add_staff8 = ('xpath','//*[@id="app"]/section/div[2]/section/div[5]/div/div[3]/div/button[2]')
+    add_staff9 = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr[1]/td[3]/div')
+    # 46 修改员工密码
+    reset_staff_password1 = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr[1]/td[8]/div/button[1]/span')
+    reset_staff_password2 = ('xpath','//*[@id="app"]/section/div[2]/section/div[5]/div/div[2]/form/div[2]/div/div/input')
+    reset_staff_password3 = ('xpath','//*[@id="app"]/section/div[2]/section/div[5]/div/div[2]/form/div[3]/div/div/input')
+    reset_staff_password4 = ('xpath','//*[@id="app"]/section/div[2]/section/div[5]/div/div[3]/div/button[2]')
+    reset_staff_password5 = ('xpath','/html/body/div[3]/div/p')
+
+    #047 修改员工姓名
+    reset_staff_name1 = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr[1]/td[8]/div/button[2]/span')
+    reset_staff_name2 = ('xpath','//*[@id="app"]/section/div[2]/section/div[5]/div/div[2]/form/div[2]/div/div/input')
+    reset_staff_name3 = ('xpath','//*[@id="app"]/section/div[2]/section/div[5]/div/div[3]/div/button[2]')
+    reset_staff_name4 = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr[1]/td[3]/div')
+
+    #048 删除员工
+    delete_staff1 = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr[1]/td[8]/div/button[3]/span')
+    delete_staff2 = ('xpath','/html/body/div[3]/div/div[3]/button[2]')
+    delete_staff3 = ('xpath','/html/body/div[4]/div/p')
+
+    # 049 打开员工角色页面
+    the_role1 = ('xpath','//*[@id="app"]/section/div[2]/section/div[1]/a[2]')
+    the_role2 = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[2]/table/thead/tr/th[2]/div')
+
+    # 50 打开系统设置
+    sys_set1 = ('xpath','//*[@id="menu"]/li[10]/div/span')
+    sys_set2 = ('xpath','//*[@id="menu"]/li[10]/ul/li[1]')
+    sys_set3 = ('xpath','//*[@id="app"]/section/div[2]/section/div/table/tr[1]/td')
+
+    #051 打开客服信息页面
+    sys_set4 = ('xpath','//*[@id="app"]/section/div[2]/section/div/table/tr[2]/td[2]/button')
+    sys_set5 = ('xpath','//*[@id="app"]/section/div[2]/section/h2')
+
+    #052 打开发票类目页面
+    sys_set6 = ('xpath', '//*[@id="app"]/section/div[2]/section/div/table/tr[3]/td[2]/button')
+    sys_set7 = ('xpath', '//*[@id="app"]/section/div[2]/section/div[2]/button/span')
+
+    #053 打开发票销方信息
+    sys_set8 = ('xpath', '//*[@id="app"]/section/div[2]/section/div/table/tr[4]/td[2]/button')
+    sys_set9 = ('xpath', '//*[@id="app"]/section/div[2]/section/table/tr[1]/td')
+    #054 打开基础数据页面
+    sys_set10 = ('xpath', '//*[@id="app"]/section/div[2]/section/div/table/tr[5]/td[2]/button')
+    sys_set11 = ('xpath', '//*[@id="app"]/section/div[2]/section/div[2]/button/span')
+    # 55 打开通道管理页面
+    sys_set12 = ('xpath', '//*[@id="menu"]/li[10]/ul/li[2]')
+    sys_set13 = ('xpath', '//*[@id="app"]/section/div[2]/section/div[2]/div[2]/table/thead/tr/th[2]/div')
+    # 56 打开通道详情页面
+    sys_set14 = ('xpath', '//*[@id="app"]/section/div[2]/section/div[2]/div[3]/table/tbody/tr/td[9]/div/button/span')
+    sys_set15 = ('xpath', '//*[@id="app"]/section/div[2]/section/h2')
+    # 57 打开公告管理页面
+    sys_set16 = ('xpath', '//*[@id="menu"]/li[10]/ul/li[3]')
+    sys_set17 = ('xpath', '//*[@id="app"]/section/div[2]/section/div[2]/button/span')
+
+    # 58 新增公告
+    sys_set18 = ('xpath', '//*[@id="app"]/section/div[2]/section/div[5]/div/div[2]/form/div/div[1]/div/div/input')
+    sys_set19 = ('xpath', '//*[@id="app"]/section/div[2]/section/div[5]/div/div[2]/form/div/div[2]/div/div/textarea')
+
+    sys_set20 = ('xpath', '//*[@id="app"]/section/div[2]/section/div[5]/div/div[2]/form/div/div[3]/div/div/label[1]/span[1]/span')
+    sys_set21 = ('xpath', '//*[@id="app"]/section/div[2]/section/div[5]/div/div[3]/div/button[2]')
+    sys_set22 = ('xpath', '//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr/td[2]/div')
+    # 059 删除公告
+
+    sys_set23 = ('xpath', '//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr[1]/td[6]/div/button[2]/span')
+
+    sys_set24 = ('xpath', '/html/body/div[3]/div/div[3]/button[2]')
+    sys_set25 = ('xpath', '/html/body/div[4]/div/p')
+
+
+
+
+
+
 
 
 
@@ -367,7 +450,7 @@ class drg_pages(Base):
 
     # 005 新增发包方--------------------------------------------005
     def addFbf(self,shortname,linkname,email,address,phone,businesslicense,
-               legalperson,openname,banknumber,ratepayernumber,worktelphone,
+               registeredmoney,openname,banknumber,ratepayernumber,worktelphone,
                invoicecontent,workbusiness,platform,service):
         self.FBF_page()
         self.click(self.add_FBF)
@@ -379,24 +462,24 @@ class drg_pages(Base):
         self.sendKeys(self.phone_number,phone)
         self.click(self.next)
         #营业执照，上传营业执照，重新输入营业执照号、法人姓名、点击直播，点击下一步
-        self.sendKeys(self.upload_license,'C:\\Users\\a\\Desktop\\新建文件夹\\1.jpg')
+        self.sendKeys(self.upload_license,'C:\\Users\\a\\Desktop\\新建文件夹\\GELAIDI.jpg')
         time.sleep(3)
         self.clear(self.business_license)
         time.sleep(1)
         self.sendKeys(self.business_license,businesslicense)
         time.sleep(1)
-        self.sendKeys(self.legal_person,legalperson)
+        self.sendKeys(self.registered_money,registeredmoney)
         self.click(self.live)
         self.click(self.next)
         #结算账户，点击省、点击开户省、点击开户城市、点击城市、点击开户银行、点击银行、输入开户人、输入银行卡号、点击下一步
         self.click(self.open_province)
         time.sleep(2)
         self.click(self.province)
-        time.sleep(2)
+        time.sleep(3)
         self.click(self.open_city)
         time.sleep(2)
         self.click(self.city)
-        time.sleep(2)
+        time.sleep(3)
         self.click(self.open_bank)
         time.sleep(2)
         self.click(self.bank)
@@ -1048,22 +1131,194 @@ class drg_pages(Base):
         result = self.is_text(self.account_security9,text)
         return result
 
-    #--------------------------------------------------------044
+    #-----------打开员工管理页面---------------------------------------------044
+    def staffManagement(self):
+        self.login()
+        self.click(self.account_security1)
+        time.sleep(1)
+        self.click(self.account_security10)
+    def staffManagementSucess(self,text):
+        result = self.is_text(self.account_security11,text)
+        return result
+
+    #--------------新增员工---------------------045
+    def addStaff(self,name,phone,psd,psd1):
+        self.staffManagement()
+        self.click(self.add_staff1)
+        self.sendKeys(self.add_staff2,name)
+        self.sendKeys(self.add_staff3,phone)
+        self.sendKeys(self.add_staff4,psd)
+        self.sendKeys(self.add_staff5,psd1)
+        self.click(self.add_staff6)
+        self.driver.find_element_by_xpath('//*[@id="app"]/section/div[2]/section/div[5]/div/div[2]/form/div[5]/div/div/div/div/div[1]/input').send_keys(Keys.DOWN)
+        self.driver.find_element_by_xpath('//*[@id="app"]/section/div[2]/section/div[5]/div/div[2]/form/div[5]/div/div/div/div/div[1]/input').send_keys(Keys.DOWN)
+        self.driver.find_element_by_xpath('//*[@id="app"]/section/div[2]/section/div[5]/div/div[2]/form/div[5]/div/div/div/div/div[1]/input').send_keys(Keys.ENTER)
+        self.click(self.add_staff8)
+    def addStaffSucess(self,text):
+        result = self.is_text(self.add_staff9,text)
+        return result
+
+    #----------------修改员工密码-------------------------046
+    def resetStaffPassword(self,psd,psd1):
+        self.staffManagement()
+        self.click(self.reset_staff_password1)
+        self.sendKeys(self.reset_staff_password2,psd)
+        self.sendKeys(self.reset_staff_password3,psd1)
+        self.click(self.reset_staff_password4)
+    def resetStaffPasswordSucess(self,text):
+        result = self.is_text(self.reset_staff_password5,text)
+        return result
+
+    #---------------------修改员工姓名----------------047
+    def resetStaffName(self,name):
+        self.staffManagement()
+        self.click(self.reset_staff_name1)
+        self.clear(self.reset_staff_name2)
+        self.sendKeys(self.reset_staff_name2,name)
+        self.click(self.reset_staff_name3)
+    def resetStaffNameSucess(self,text):
+        result = self.is_text(self.reset_staff_name4,text)
+        return result
+
+    #--------------------删除员工------------------048
+    def deleteStaff(self,name,phone,psd,psd1):
+        self.staffManagement()
+        time.sleep(3)
+        # r = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr[1]/td[8]/div/button[3]/span')
+        # norecord = self.is_text(r,'[删除]')
+        # print(norecord)
+        # if norecord == True:
+        #     self.click(self.delete_staff1)
+        #     time.sleep(1)
+        #     self.click(self.delete_staff2)
+        # else:
+        self.addStaff(name,phone,psd,psd1)
+        self.driver.refresh()
+        time.sleep(3)
+        self.click(self.delete_staff1)
+        time.sleep(3)
+        self.click(self.delete_staff2)
+
+    def deleteStaffSucess(self,text):
+        result = self.is_text(self.delete_staff3, text)
+        return result
 
 
 
+    #--------------打开员工角色页面-------------------------049
+    def theRole(self):
+        self.staffManagement()
+        self.click(self.the_role1)
+    def theRoleSucess(self,text):
+        result = self.is_text(self.the_role2,text)
+        return result
 
+    #---------------系统设置页面-----------------------------050
+    def sysSet(self):
+        self.login()
+        self.click(self.sys_set1)
+        time.sleep(1)
+        self.click(self.sys_set2)
+    def sysSetSucess(self,text):
+        result = self.is_text(self.sys_set3,text)
+        return result
 
+    #-----------------打开客服信息页面----------------------------051
+    def infoService(self):
+        self.sysSet()
+        self.click(self.sys_set4)
+    def infoServiceSucess(self,text):
+        result = self.is_text(self.sys_set5,text)
+        return result
 
+    #-----------------打开发票类目页面----------------------------052
+    def invoiceCategory(self):
+        self.sysSet()
+        self.click(self.sys_set6)
+    def invoiceCategorySucess(self,text):
+        result = self.is_text(self.sys_set7,text)
+        return result
+
+    #-----------------打开发票销方信息-----------------------------053
+    def InvoiceXf(self):
+        self.sysSet()
+        self.click(self.sys_set8)
+    def InvoiceXfSucess(self,text):
+        result = self.is_text(self.sys_set9, text)
+        return result
+
+    #--------------------基础数据页面-----------------------------054
+    def basicData(self):
+        self.sysSet()
+        self.click(self.sys_set10)
+    def basicDataSucess(self,text):
+        result = self.is_text(self.sys_set11, text)
+        return result
+
+    #------------------打开通道管理页面--------------------------055
+    def channelManagement(self):
+        self.login()
+        self.click(self.sys_set1)
+        time.sleep(1)
+        self.click(self.sys_set12)
+    def channelManagementSucess(self,text):
+        result = self.is_text(self.sys_set13, text)
+        return result
+
+    #------------------打开通道详情页面---------------------056
+    def channelDetails(self):
+        self.channelManagement()
+        self.click(self.sys_set14)
+    def channelDetailsSucess(self,text):
+        result = self.is_text(self.sys_set15, text)
+        return result
+
+    #----------------打开公告管理页面------------------------------057
+    def notice(self):
+        self.login()
+        self.click(self.sys_set1)
+        time.sleep(1)
+        self.click(self.sys_set16)
+    def noticeSucess(self,text):
+        result = self.is_text(self.sys_set17, text)
+        return result
+
+    #---------------------新增公告--------------------------058
+    def addNotice(self,bt,xq):
+        self.notice()
+        self.click(self.sys_set17)
+        self.sendKeys(self.sys_set18,bt)
+        self.sendKeys(self.sys_set19,xq)
+        self.click(self.sys_set20)
+        self.click(self.sys_set21)
+    def addNoticeSucess(self,text):
+        result = self.is_text(self.sys_set22, text)
+        return result
+
+    #-------------------删除公告-------------------------------059
+    def deleteNotice(self,bt,xq):
+        self.addNotice(bt,xq)
+        time.sleep(2)
+        self.click(self.sys_set23)
+        self.click(self.sys_set24)
+    def deleteNoticeSucess(self,text):
+        result = self.is_text(self.sys_set25, text)
+        return result
 
 
 
 if __name__ == '__main__':
     driver = webdriver.Chrome()
     DP = drg_pages(driver)
-    DP.resetPhone()
-    result = DP.resetPhoneSucess('修改手机号')
+    sj = SF()
+    name = sj.name()
+    phone = sj.phone()
+    psd = '111111'
+    psd1 = '111111'
+    DP.deleteStaff(name,phone,psd,psd1)
+    result = DP.deleteStaffSucess('删除成功')
     print(result)
+
 
 
 
