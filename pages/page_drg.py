@@ -386,7 +386,7 @@ class drg_pages(Base):
     sys_set18 = ('xpath', '//*[@id="app"]/section/div[2]/section/div[5]/div/div[2]/form/div/div[1]/div/div/input')
     sys_set19 = ('xpath', '//*[@id="app"]/section/div[2]/section/div[5]/div/div[2]/form/div/div[2]/div/div/textarea')
 
-    sys_set20 = ('xpath', '//*[@id="app"]/section/div[2]/section/div[5]/div/div[2]/form/div/div[3]/div/div/label[1]/span[1]/span')
+    sys_set20 = ('xpath', '//*[@id="app"]/section/div[2]/section/div[5]/div/div[2]/form/div/div[3]/div/div/label[2]/span[1]/span')
     sys_set21 = ('xpath', '//*[@id="app"]/section/div[2]/section/div[5]/div/div[3]/div/button[2]')
     sys_set22 = ('xpath', '//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr/td[2]/div')
     # 059 删除公告

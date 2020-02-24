@@ -45,6 +45,9 @@ if __name__ == '__main__':
     runner = HTMLTestRunner.HTMLTestRunner(stream=fp,title=u'达人馆',description=u'测试报告')
     runner.run(discover)
     fp.close()
+    new_report = reportPath
+    # 发送报告
+    send_mail(new_report)
     #------------------------本地代码测试路径--------------------------------
     # casePath = "E:\web_auto\case"
     # rule = "test*.py"

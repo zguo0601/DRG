@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="72782b61-1108-4fea-ba2d-44e8cddf854e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case/lianxi.py" beforeDir="false" afterPath="$PROJECT_DIR$/case/lianxi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/page_drg.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/page_drg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_all.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_all.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +51,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.page_drg">
+  <component name="RunManager" selected="Python tests.Unittests for test_drg.DRG.test_drg_058">
     <configuration name="base" type="PythonConfigurationType" factoryName="Python">
       <module name="web_auto" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -151,8 +152,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.page_drg" />
         <item itemvalue="Python tests.Unittests for test_drg.DRG.test_drg_058" />
+        <item itemvalue="Python.page_drg" />
         <item itemvalue="Python tests.Unittests for test_drg.DRG.test_drg_046" />
         <item itemvalue="Python tests.Unittests for test_drg.DRG.test_drg_045" />
         <item itemvalue="Python tests.Unittests for test_drg.DRG.test_drg_005" />
