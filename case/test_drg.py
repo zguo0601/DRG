@@ -4,6 +4,7 @@ import ddt
 import time
 from selenium import webdriver
 from pages.page_drg import drg_pages
+from pages.page_drg import Merchant
 from common.sf_xm import SF
 
 
@@ -16,6 +17,7 @@ class DRG(unittest.TestCase):
         cls.time = 10
         cls.t = 1
         cls.DP = drg_pages(cls.driver)
+        cls.MC = Merchant(cls.driver)
         cls.sj = SF()
 
 
@@ -447,6 +449,54 @@ class DRG(unittest.TestCase):
         self.DP.deleteNotice(bt, xq)
         result = self.DP.deleteNoticeSucess('删除成功')
         print(result)
+
+    #----------------------商户端-----------------!
+
+    def test_drg_060(self):
+        '''商户登录'''
+        self.MC.merchantLogin()
+        result = self.MC.get_merchant_name('极限传媒')
+        print(result)
+
+    def test_drg_061(self):
+        '''批量新增商户'''
+        name = self.sj.name()
+        idcard = self.sj.sf()
+        phone = self.sj.phone()
+        self.MC.addClients(name,idcard,phone)
+        result = self.MC.addClientsSucess('成功新增(1)')
+        print(result)
+
+
+    def test_drg_062(self):
+        '''新增商户'''
+        name = self.sj.name()
+        idcard = self.sj.sf()
+        phone = self.sj.phone()
+        self.MC.add_client(name, idcard, phone)
+        result = self.MC.addClientSucess('成功新增(1)')
+        print(result)
+
+    def test_drg_063(self):
+        '''新增充值'''
+        money = self.sj.year()
+        self.MC.add_recharge(money)
+        result = self.MC.add_recharge_sucess('新增充值提交成功')
+        print(result)
+
+    def test_drg_064(self):
+        '''达人馆充值单号查询'''
+        money = 200
+        self.MC.rechangeNumber(money)
+        result = self.MC.rechangeNumberSucess('1')
+        print(result)
+
+    def test_drg_065(self):
+        '''打开充值订单详情页'''
+        self.MC.rechangeNumberDetails()
+        result = self.MC.rechangeNumberDetailsSucess('充值详情')
+        print(result)
+
 
 
 

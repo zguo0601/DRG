@@ -10,13 +10,14 @@ from common.sf_xm import SF
 
 
 class Merchant(Base):
+    #商户登录---------------------------------001
     username = ('id','login_name')
     password = ('id','password')
     login_but = ('css selector', '.login_btn')
     loc_client = ('xpath','//*[@id="menu"]/li[1]/div/span')
     loc_user_control = ('xpath','//*[text()="用户管理"]')
     m_name = ('xpath', '//*[@id="headerR"]/em')
-    #新增用户
+    #新增用户--------------------------------------------002
     loc_addclient = ('xpath','//*[@id="menu"]/li[1]/ul/li[2]')
     loc_add_name = ('xpath','//*[@id="app"]/section/div[2]/section/table/tr[2]/td[2]/div/input')
     loc_add_idnumber = ('xpath','//*[@id="app"]/section/div[2]/section/table/tr[2]/td[3]/div/input')
@@ -24,18 +25,40 @@ class Merchant(Base):
     loc_up_button = ('xpath','//*[@id="app"]/section/div[2]/section/div[2]/button')
     loc_confirm = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/button')
     loc_add_idnumber_1 = ('xpath','//*[@id="app"]/section/div[2]/section/div[2]/div[3]/table/tbody/tr/td[3]')
-    #批量新增用户
+    add_sucess = ('xpath','//*[@id="app"]/section/div[2]/section/div[2]/div[1]/div[1]/div/div[1]/div/div[3]')
+    #批量新增用户--------------------------------------------003
     loc_addclients = ('xpath','//*[@id="menu"]/li[1]/ul/li[3]')
     loc_upfile = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/label/input')
+    loc_name = ('xpath','//*[@id="app"]/section/div[2]/section/table[1]/tr[2]/td[2]/div/input')
+    loc_idcard = ('xpath','//*[@id="app"]/section/div[2]/section/table[1]/tr[2]/td[3]/div/input')
+    loc_phone = ('xpath','//*[@id="app"]/section/div[2]/section/table[1]/tr[2]/td[4]/div/input')
+    loc_click = ('xpath','//*[@id="app"]/section/div[2]/section/table[1]/tr[2]/td[6]/button/span')
+    loc_sucess = ('xpath','//*[@id="app"]/section/div[2]/section/table[2]/tr[2]/td[5]')
     loc_qd = ('xpath','//*[@id="app"]/section/div[2]/section/div[4]/button')
-    #新增充值
+    loc_addclients_sucess = ('xpath','//*[@id="app"]/section/div[2]/section/div[2]/div[1]/div[1]/div/div[1]/div/div[3]')
+    #新增充值------------------------------------------------004
     loc_recharge = ('xpath','//*[text()="充值"]')
     loc_add_recharge = ('xpath','//*[@id="menu"]/li[2]/ul/li[2]')
     loc_amount_of_remittance = ('xpath','//*[@class="el-input"]/input')
     loc_picture = ('xpath','//input[@class="upload-file"]')
     loc_yes = ('xpath','//div[@class="btn-large"]/button')
+    recharge_money = ('xpath','/html/body/div[3]/div/p')
+    #充值单号查询-----------------------------------------005
+    rechange_number1 = ('xpath','//span[text()="充值"]')
+    rechange_number2 = ('xpath','//li[text()="充值管理"]')
+    rechange_number3 = ('xpath','//*[@id="app"]/section/div[2]/section/div[1]/form/div[2]/div/div/input')
+    #点击查询
+    rechange_number4 = ('xpath','//*[@id="app"]/section/div[2]/section/div[1]/form/div[7]/div/button[1]')
+    #单号
+    rechange_number5 = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr[1]/td[3]/div')
+    rechange_number6 = ('xpath','//*[@id="app"]/section/div[2]/section/div[1]/form/div[4]/div/div/input')
+    rechange_number7 = ('xpath','//*[@id="app"]/section/div[2]/section/div[2]/ul/li[1]/strong')
+    #暂无数据
+    rechange_number8 = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr/td[1]/div')
 
-    recharge_money = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr/td[4]')
+    #充值订单详情页面-------------------------------006
+    rechange_number_details1 = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr[1]/td[9]/div/button/span')
+    rechange_number_details2 = ('xpath','//*[@id="app"]/section/div[2]/section/h2')
 
     #开票申请
     apply_1 = ('xpath','//span[text()="开票"]')
@@ -89,43 +112,67 @@ class Merchant(Base):
         self.sj = SF
 
 
-
+    #商户登录--------001
     def merchantLogin(self,user='M002137',psw='111111'):
         self.driver.get('https://spman.shb02.net/login')
         self.sendKeys(self.username,user)
         self.sendKeys(self.password,psw)
         self.click(self.login_but)
-
-    def get_merchant_name(self,m_name,_text):
-        result = self.is_text(self.m_name,_text)
+    def get_merchant_name(self,text):
+        result = self.is_text(self.m_name,text)
         return result
 
-    #批量新增商户
-    def add_clients(self):
+    #批量新增商户----------002
+    def addClients(self,name,idcard,phone):
+        self.merchantLogin()
+        self.driver.maximize_window()
         self.click(self.loc_client)
         time.sleep(1)
         self.click(self.loc_addclients)
         self.sendKeys(self.loc_upfile,'C:\\Users\\a\\Desktop\\新建文件夹\\2.1新增.xlsx')
-        self.click(self.loc_qd)
-    #新增商户
-    def add_client(self,name,number):
+        self.clear(self.loc_name)
+        self.clear(self.loc_idcard)
+        self.clear(self.loc_phone)
+        self.sendKeys(self.loc_name,name)
+        self.sendKeys(self.loc_idcard,idcard)
+        self.sendKeys(self.loc_phone,phone)
+        self.click(self.loc_click)
+        time.sleep(3)
+        xginfo = self.is_text(self.loc_sucess,'校验通过，请点击确认新增')
+        if xginfo == True:
+            self.click(self.loc_qd)
+        else:
+            self.clear(self.loc_name)
+            self.clear(self.loc_idcard)
+            self.clear(self.loc_phone)
+            self.sendKeys(self.loc_name, name)
+            self.sendKeys(self.loc_idcard, idcard)
+            self.sendKeys(self.loc_phone, phone)
+            self.click(self.loc_click)
+            time.sleep(3)
+            self.click(self.loc_qd)
+    def addClientsSucess(self,text):
+        result = self.is_text(self.loc_addclients_sucess,text)
+        return result
+
+    #新增商户-------------------003
+    def add_client(self,name,idcard,phone):
+        self.merchantLogin()
         self.click(self.loc_client)
         time.sleep(2)
         self.click(self.loc_addclient)
         time.sleep(1)
         self.sendKeys(self.loc_add_name,name)
-        self.sendKeys(self.loc_add_idnumber,number)
-        self.sendKeys(self.loc_add_phone,'18120798657')
+        self.sendKeys(self.loc_add_idnumber,idcard)
+        self.sendKeys(self.loc_add_phone,phone)
         self.click(self.loc_up_button)
         time.sleep(2)
         self.click(self.loc_confirm)
-
-    #断言新增商户成功
-    def add_client_sucess(self,text):
-        result = self.is_text(self.loc_add_idnumber_1,text)
+    def addClientSucess(self,text):
+        result = self.is_text(self.add_sucess,text)
         return result
 
-    #新增充值
+    #新增充值----------------------------004
     def add_recharge(self,money):
         self.merchantLogin()
         self.click(self.loc_recharge)
@@ -135,11 +182,48 @@ class Merchant(Base):
         self.sendKeys(self.loc_picture,'C:\\Users\\a\\Desktop\\新建文件夹\\6.png')
         time.sleep(5)
         self.click(self.loc_yes)
-
     #断言新增充值提交成功
     def add_recharge_sucess(self,text):
         result = self.is_text(self.recharge_money, text)
         return result
+
+    #达人馆充值单号查询
+    #1.点击充值2.点击充值管理3.清楚开始时间4.点击查询5.判断是否有充值申请6.1有，则获取充值单号6.2输入充值单号6.3点击查询。
+    #7.1没有充值记录，调用新增充值方法，7.2页面获取充值单号7.3输入充值单号7.4点击查询
+    def rechangeNumber(self,money):
+        self.merchantLogin()
+        self.click(self.rechange_number1)
+        time.sleep(1)
+        self.click(self.rechange_number2)
+        self.clear(self.rechange_number3)
+        self.click(self.rechange_number4)
+        norecord = self.is_text(self.rechange_number8,'暂无数据')
+        number = self.findEle(self.rechange_number5).text
+        if norecord == True:
+            self.add_recharge(money)
+            self.sendKeys(self.rechange_number6,number)
+            self.click(self.rechange_number4)
+        else:
+            self.sendKeys(self.rechange_number6, number)
+            self.click(self.rechange_number4)
+    def rechangeNumberSucess(self,text):
+        result = self.is_text(self.rechange_number8,text)
+        return result
+
+    #打开充值订单详情页
+    def rechangeNumberDetails(self):
+        self.merchantLogin()
+        self.click(self.rechange_number1)
+        time.sleep(1)
+        self.click(self.rechange_number2)
+        self.click(self.rechange_number2)
+        self.clear(self.rechange_number3)
+        self.click(self.rechange_number4)
+        self.click(self.rechange_number_details1)
+    def rechangeNumberDetailsSucess(self,text):
+        result = self.is_text(self.rechange_number_details2,text)
+        return result
+
 
     #开票申请
     def apply_invoice(self,text,money):
@@ -250,9 +334,14 @@ class Merchant(Base):
 
 if __name__ == '__main__':
     driver = webdriver.Chrome()
-    a = Merchant(driver)
-    text = '暂无数据'
-    money = 50
-    a.apply_invoice(text,money)
-    #a.driver.quit()
+    MC = Merchant(driver)
+    sj =SF()
+    name = sj.name()
+    idcard = sj.sf()
+    phone = sj.phone()
+    money = 200
+    MC.rechangeNumberDetails()
+    result = MC.rechangeNumberDetailsSucess('充值详情')
+    print(result)
+
 
