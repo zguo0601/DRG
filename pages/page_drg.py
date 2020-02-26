@@ -442,7 +442,7 @@ class drg_pages(Base):
     def FBF_page(self):
         self.login()
         self.click(self.user_control)
-        time.sleep(1)
+        time.sleep(2)
         self.click(self.FBF_control)
     def FBF_page_sucess(self,text):
         result = self.is_text(self.add_FBF,text)
@@ -528,7 +528,7 @@ class drg_pages(Base):
     # ---------------------跳转商户详情页面-----------------------------008
     def merchantdetails(self):
         self.FBF_page()
-        time.sleep(1)
+        time.sleep(2)
         self.click(self.merchant_details)
     def merchantDetailsSucess(self,text):
         result = self.is_text(self.merchant_details_sucess, text)
@@ -1315,9 +1315,9 @@ if __name__ == '__main__':
     phone = sj.phone()
     psd = '111111'
     psd1 = '111111'
-    DP.deleteStaff(name,phone,psd,psd1)
-    result = DP.deleteStaffSucess('删除成功')
-    print(result)
+    DP.merchantdetails()
+    # result = DP.deleteStaffSucess('删除成功')
+    # print(result)
 
 
 

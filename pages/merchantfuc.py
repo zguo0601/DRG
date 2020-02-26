@@ -215,7 +215,7 @@ class Merchant(Base):
     def rechangeNumberDetails(self):
         self.merchantLogin()
         self.click(self.rechange_number1)
-        time.sleep(1)
+        time.sleep(2)
         self.click(self.rechange_number2)
         self.click(self.rechange_number2)
         self.clear(self.rechange_number3)
@@ -392,7 +392,7 @@ if __name__ == '__main__':
     phone = sj.phone()
     text = '暂无数据'
     money = 200
-    MC.apply_invoice_sucess()
+    MC.rechangeNumberDetails()
     # result = MC.applyInvoiceSucess('开票申请成功')
     # print(result)
 
