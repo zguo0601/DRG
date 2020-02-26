@@ -509,6 +509,9 @@ if __name__ == '__main__':
     driver = webdriver.Chrome()
     url = 'https://spman.shb02.net/admin/login'
     a = DRG(driver)
+    a.test_drg_009()
+    a.test_drg_014()
+    a.test_drg_065()
 
 
 

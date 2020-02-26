@@ -77,7 +77,7 @@ class drg_pages(Base):
     # 009 跳转归属用户页面
     audit_status = ('xpath','//*[@placeholder="审核状态"]')
     the_audit_pass = ('xpath','/html/body/div[3]/div/div[1]/ul/li[3]/span')
-    affiliation_user = ('xpath','//table/tbody/tr[1]/td[9]/div/div/button[3]/span')
+    affiliation_user = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr[4]/td[9]/div/div/button[3]')
     #验证点
     affiliation_user_sucess = ('xpath','//*[@id="app"]/section/nav/div/span[3]/span[1]/a')
     # 010 正常打开承揽方管理页面
@@ -902,7 +902,7 @@ class drg_pages(Base):
         norecord = self.is_text(self.invoice3,text)
         if norecord ==True:
             #商户新增开票申请
-            self.MC.apply_invoice(text,money,)
+            self.MC.applyInvoice(text,money,)
             self.login()
             self.click(self.invoice1)
             time.sleep(1)

@@ -94,6 +94,7 @@ class Merchant(Base):
     apply_15 = ('xpath','//*[@id="app"]/section/div[2]/section/div[6]/button')
     #确认提交
     apply_16 = ('xpath','//*[@id="app"]/section/div[2]/section/div[6]/button')
+    apply_17 = ('xpath','//*[@id="app"]/section/div[2]/section/div[5]/h2')
 
     # 查询开票结果
     apply_18 = ('xpath', '//*[@id="menu"]/li[5]/ul/li[2]')
@@ -187,7 +188,7 @@ class Merchant(Base):
         result = self.is_text(self.recharge_money, text)
         return result
 
-    #达人馆充值单号查询
+    #达人馆充值单号查询---------------------------------005
     #1.点击充值2.点击充值管理3.清楚开始时间4.点击查询5.判断是否有充值申请6.1有，则获取充值单号6.2输入充值单号6.3点击查询。
     #7.1没有充值记录，调用新增充值方法，7.2页面获取充值单号7.3输入充值单号7.4点击查询
     def rechangeNumber(self,money):
@@ -210,7 +211,7 @@ class Merchant(Base):
         result = self.is_text(self.rechange_number8,text)
         return result
 
-    #打开充值订单详情页
+    #打开充值订单详情页----------------------006
     def rechangeNumberDetails(self):
         self.merchantLogin()
         self.click(self.rechange_number1)
@@ -225,13 +226,13 @@ class Merchant(Base):
         return result
 
 
-    #开票申请
-    def apply_invoice(self,text,money):
+    #开票申请-------------------------------------007
+    def applyInvoice(self,text,money):
         self.merchantLogin()
         self.click(self.apply_1)
         time.sleep(1)
         self.click(self.apply_2)
-        #判断是否有邮箱地址，有则点击申请开票，无则添加邮寄地址
+        #判断是否有邮箱地址，有则点击申请开票，无则添加邮寄地址，在继续开票后面的操作
         numb = ('xpath','//table/tbody/tr/td[1]/div/div')
         r = self.is_text(numb,'1')
         if r == True:
@@ -306,18 +307,68 @@ class Merchant(Base):
             self.click(self.apply_13)
             self.click(self.apply_3)
             print('----添加邮寄地址-------')
+            # 判断是否有开票记录，有则提交，无则新增充值
+            record = self.is_text(self.record, text)
+            if record == True:
+                # 新增充值
+                self.add_recharge(money)
+                # 确认新增充值
+                self.driver.get('https://spman.shb02.net/admin/login')
+                self.sendKeys(self.username1, 'spman_admin')
+                self.sendKeys(self.password1, '111111')
+                self.click(self.buttom)
+                self.click(self.pay)
+                time.sleep(1)
+                self.click(self.pay1)
+                self.clear(self.add_pay1)
+                self.click(self.add_pay2)
+                time.sleep(1)
+                # self.click(self.add_pay3)
+                self.driver.find_element_by_xpath(
+                    '//*[@id="app"]/section/div[2]/section/div[1]/form/div[6]/div/div/div[1]/input').send_keys(
+                    Keys.DOWN)
+                self.driver.find_element_by_xpath(
+                    '//*[@id="app"]/section/div[2]/section/div[1]/form/div[6]/div/div/div[1]/input').send_keys(
+                    Keys.DOWN)
+                self.driver.find_element_by_xpath(
+                    '//*[@id="app"]/section/div[2]/section/div[1]/form/div[6]/div/div/div[1]/input').send_keys(
+                    Keys.ENTER)
+                self.click(self.add_pay4)
+                self.click(self.add_pay5)
+                self.click(self.add_pay6)
+                self.click(self.add_pay7)
+                time.sleep(1)
+                self.click(self.add_pay8)
+                self.click(self.add_pay9)
+                # 商户端提交发票申请
+                self.merchantLogin()
+                self.click(self.apply_1)
+                time.sleep(1)
+                self.click(self.apply_3)
+                time.sleep(1)
+                self.click(self.apply_14)
+                self.click(self.apply_15)
+                self.click(self.apply_16)
+                time.sleep(2)
+                self.click(self.apply_16)
+                print('-----无充值记录，商户充值--运营确认--商户提交开票信息----')
+            else:
+                self.click(self.apply_14)
+                self.click(self.apply_15)
+                self.click(self.apply_16)
+                time.sleep(2)
+                self.click(self.apply_16)
+                print('-------有充值记录，直接提交开票信息---------')
+
+    def applyInvoiceSucess(self,text):
+        result = self.is_text(self.apply_17,text)
+        return result
 
 
 
-
-
-
-
-
-
-
-    #查询开票结果
+    #查询开票结果-----------------------------008
     def apply_invoice_sucess(self):
+        self.merchantLogin()
         self.click(self.apply_1)
         time.sleep(1)
         self.click(self.apply_18)
@@ -339,9 +390,10 @@ if __name__ == '__main__':
     name = sj.name()
     idcard = sj.sf()
     phone = sj.phone()
+    text = '暂无数据'
     money = 200
-    MC.rechangeNumberDetails()
-    result = MC.rechangeNumberDetailsSucess('充值详情')
-    print(result)
+    MC.apply_invoice_sucess()
+    # result = MC.applyInvoiceSucess('开票申请成功')
+    # print(result)
 
 
