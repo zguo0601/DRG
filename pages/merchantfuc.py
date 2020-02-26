@@ -214,9 +214,9 @@ class Merchant(Base):
     #打开充值订单详情页----------------------006
     def rechangeNumberDetails(self):
         self.merchantLogin()
+        self.driver.maximize_window()
         self.click(self.rechange_number1)
         time.sleep(2)
-        self.click(self.rechange_number2)
         self.click(self.rechange_number2)
         self.clear(self.rechange_number3)
         self.click(self.rechange_number4)

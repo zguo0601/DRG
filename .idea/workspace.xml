@@ -4,7 +4,6 @@
     <list default="true" id="72782b61-1108-4fea-ba2d-44e8cddf854e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/merchantfuc.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/merchantfuc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/page_drg.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/page_drg.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +50,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.page_drg">
+  <component name="RunManager" selected="Python.merchantfuc">
     <configuration name="base" type="PythonConfigurationType" factoryName="Python">
       <module name="web_auto" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -115,6 +114,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Unittests for test_drg.DRG" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="web_auto" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/case" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_drg.DRG&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="Unittests for test_drg.DRG.test_drg_008" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="web_auto" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -126,20 +139,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;test_drg.DRG.test_drg_008&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests for test_drg.DRG.test_drg_029" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="web_auto" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/case" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_drg.DRG.test_drg_029&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -159,11 +158,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.merchantfuc" />
+        <item itemvalue="Python tests.Unittests for test_drg.DRG.test_drg_065" />
+        <item itemvalue="Python tests.Unittests for test_drg.DRG" />
         <item itemvalue="Python.page_drg" />
         <item itemvalue="Python tests.Unittests for test_drg.DRG.test_drg_008" />
-        <item itemvalue="Python tests.Unittests for test_drg.DRG.test_drg_065" />
-        <item itemvalue="Python.merchantfuc" />
-        <item itemvalue="Python tests.Unittests for test_drg.DRG.test_drg_029" />
       </list>
     </recent_temporary>
   </component>
