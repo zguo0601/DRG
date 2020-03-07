@@ -114,7 +114,7 @@ class Merchant(Base):
 
 
     #商户登录--------001
-    def merchantLogin(self,user='M002137',psw='111111'):
+    def merchantLogin(self,user='M009429',psw='111111'):
         self.driver.get('https://spman.shb02.net/login')
         self.sendKeys(self.username,user)
         self.sendKeys(self.password,psw)
@@ -220,6 +220,7 @@ class Merchant(Base):
         self.click(self.rechange_number2)
         self.clear(self.rechange_number3)
         self.click(self.rechange_number4)
+        time.sleep(1)
         self.click(self.rechange_number_details1)
     def rechangeNumberDetailsSucess(self,text):
         result = self.is_text(self.rechange_number_details2,text)

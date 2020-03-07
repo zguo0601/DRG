@@ -77,9 +77,12 @@ class drg_pages(Base):
     # 009 跳转归属用户页面
     audit_status = ('xpath','//*[@placeholder="审核状态"]')
     the_audit_pass = ('xpath','/html/body/div[3]/div/div[1]/ul/li[3]/span')
-    affiliation_user = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr[4]/td[9]/div/div/button[3]')
+    faf_jc = ('xpath','//*[@id="app"]/section/div[2]/section/div[1]/form/div[3]/div/div/input')
+    affiliation_user = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr/td[9]/div/div/button[3]/span')
+
+
     #验证点
-    affiliation_user_sucess = ('xpath','//*[@id="app"]/section/nav/div/span[3]/span[1]/a')
+    affiliation_user_sucess = ('xpath','//*[@id="app"]/section/div[2]/section/div[2]/div[3]/table/tbody/tr[1]/td[1]/div/div')
     # 010 正常打开承揽方管理页面
     user_pages = ('xpath','//li[text()="承揽方管理"]')
     #验证点,承揽方管理
@@ -96,10 +99,10 @@ class drg_pages(Base):
     add_task_5_1 = ('xpath','//*[@id="app"]/section/div[2]/section/form/table/tr[2]/td[2]/span/div[2]/div/div[2]/div[2]/div[3]/table/tbody/tr/td[1]/div/label/span/span')
     add_task_6 = ('xpath','//*[@id="app"]/section/div[2]/section/form/table/tr[2]/td[2]/span/div[2]/div/div[3]/div/button[2]')
     add_task_7 = ('xpath','//*[@id="app"]/section/div[2]/section/form/table/tr[3]/td[2]/div/input')
-    add_task_8 = ('xpath','//*[@id="app"]/section/div[2]/section/form/table/tr[4]/td[2]/div[1]/label[6]/span[1]/span')
-    add_task_9 = ('xpath','//*[@id="app"]/section/div[2]/section/form/table/tr[5]/td[2]/div[1]/label[5]/span[1]/span')
+    add_task_8 = ('xpath','//*[@id="app"]/section/div[2]/section/form/table/tr[4]/td[2]/div[1]/label[1]/span[2]')
+    add_task_9 = ('xpath','//*[@id="app"]/section/div[2]/section/form/table/tr[5]/td[2]/div[1]/label[1]/span[2] ')
     add_task_10 = ('xpath','//*[@id="app"]/section/div[2]/section/form/table/tr[6]/td[2]/div/input')
-    add_task_11 = ('xpath','//*[@id="app"]/section/div[2]/section/form/table/tr[7]/td[2]/div[1]/label[3]/span[1]/span')
+    add_task_11 = ('xpath','//*[@id="app"]/section/div[2]/section/form/table/tr[7]/td[2]/div[1]/label[2]/span[2]')
     add_task_12 = ('xpath','//*[@id="app"]/section/div[2]/section/form/table/tr[8]/td[2]/div/input')
     add_task_13 = ('xpath','//*[@id="app"]/section/div[2]/section/form/table/tr[9]/td[2]/div/input')
     add_task_14 = ('xpath','//*[@id="app"]/section/div[2]/section/form/table/tr[15]/td[2]/div/textarea')
@@ -164,14 +167,14 @@ class drg_pages(Base):
     loan_details2 = ('xpath','//*[@id="menu"]/li[4]/ul/li[1]')
     loan_details3 = ('xpath','//*[@id="app"]/section/div[2]/section/div[1]/form/div[2]/div/div/input')
     loan_details4 = ('xpath','//*[text()="查询"]')
-    loan_details5 = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr[1]/td[12]/div/button[1]')
+    loan_details5 = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr[1]/td[11]/div/button[1]/span')
     loan_details_sucess = ('xpath','//*[@id="app"]/section/div[2]/section/h2')
     # 022 上传完税证明
     upload_prove4 = ('xpath','//*[@placeholder="放款状态"]')
     upload_prove5 = ('xpath','/html/body/div[3]/div/div[1]/ul/li[1]/span')
     upload_prove6 = ('xpath','//*[text()="查询"]')
-    upload_prove7 = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr[1]/td[12]/div/label/input')
-    upload_prove_sucess = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr[1]/td[12]/div/label')
+    upload_prove7 = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr[1]/td[11]/div/label/input')
+    upload_prove_sucess = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr[1]/td[11]/div/label')
     # 023 批量放款记录页面
     banth_loan1 = ('xpath','//*[@id="menu"]/li[4]/div/span')
     banth_loan2 = ('xpath','//*[@id="menu"]/li[4]/ul/li[2]')
@@ -300,13 +303,13 @@ class drg_pages(Base):
     TD_bills2 = ('xpath','//*[@id="menu"]/li[7]/ul/li[2]')
     TD_bills3 = ('xpath','//*[@id="app"]/section/div[2]/section/div[2]/div[2]/table/thead/tr/th[2]/div')
     # 039 打开我的账户页面
-    account_management1 = ('xpath','//*[@id="menu"]/li[9]/div/span')
-    account_management2 = ('xpath','//*[@id="menu"]/li[9]/ul/li[1]')
+    account_management1 = ('xpath','//span[text()="账户管理"]')
+    account_management2 = ('xpath','//li[text()="我的账户"]')
     account_management3 = ('xpath','//*[@id="app"]/section/div[2]/section/h2')
 
     #040 账户安全
-    account_security1 = ('xpath','//*[@id="menu"]/li[9]/div/span')
-    account_security2 = ('xpath','//*[@id="menu"]/li[9]/ul/li[2]')
+    account_security1 = ('xpath','//span[text()="账户管理"]')
+    account_security2 = ('xpath','//li[text()="账户安全"]')
     account_security3 = ('xpath','//*[@id="app"]/section/div[2]/section/div[1]/table/tr[1]/td')
     # 041 打开重新支付密码页面
     account_security4 = ('xpath','//*[@id="app"]/section/div[2]/section/div[1]/table/tr[2]/td[2]/button/span')
@@ -319,7 +322,7 @@ class drg_pages(Base):
     account_security9 = ('xpath','//*[@id="app"]/section/div[2]/section/div[4]/div/div[1]/span')
 
     # 044 打开员工管理页面
-    account_security10 = ('xpath','//*[@id="menu"]/li[9]/ul/li[3]')
+    account_security10 = ('xpath','//li[text()="员工管理"]')
     account_security11 = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[2]/table/thead/tr/th[2]/div')
 
     #45 新增员工
@@ -354,8 +357,8 @@ class drg_pages(Base):
     the_role2 = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[2]/table/thead/tr/th[2]/div')
 
     # 50 打开系统设置
-    sys_set1 = ('xpath','//*[@id="menu"]/li[10]/div/span')
-    sys_set2 = ('xpath','//*[@id="menu"]/li[10]/ul/li[1]')
+    sys_set1 = ('xpath','//span[text()="系统管理"]')
+    sys_set2 = ('xpath','//li[text()="系统设置"]')
     sys_set3 = ('xpath','//*[@id="app"]/section/div[2]/section/div/table/tr[1]/td')
 
     #051 打开客服信息页面
@@ -373,13 +376,13 @@ class drg_pages(Base):
     sys_set10 = ('xpath', '//*[@id="app"]/section/div[2]/section/div/table/tr[5]/td[2]/button')
     sys_set11 = ('xpath', '//*[@id="app"]/section/div[2]/section/div[2]/button/span')
     # 55 打开通道管理页面
-    sys_set12 = ('xpath', '//*[@id="menu"]/li[10]/ul/li[2]')
+    sys_set12 = ('xpath', '//li[text()="通道管理"]')
     sys_set13 = ('xpath', '//*[@id="app"]/section/div[2]/section/div[2]/div[2]/table/thead/tr/th[2]/div')
     # 56 打开通道详情页面
     sys_set14 = ('xpath', '//*[@id="app"]/section/div[2]/section/div[2]/div[3]/table/tbody/tr/td[9]/div/button/span')
     sys_set15 = ('xpath', '//*[@id="app"]/section/div[2]/section/h2')
     # 57 打开公告管理页面
-    sys_set16 = ('xpath', '//*[@id="menu"]/li[10]/ul/li[3]')
+    sys_set16 = ('xpath', '//li[text()="公告管理"]')
     sys_set17 = ('xpath', '//*[@id="app"]/section/div[2]/section/div[2]/button/span')
 
     # 58 新增公告
@@ -423,6 +426,7 @@ class drg_pages(Base):
         self.sendKeys(self.username,user)
         self.sendKeys(self.password,psd)
         self.click(self.buttom)
+        self.driver.maximize_window()
     # ----------判断登录是否成功-------------------------------001
     def get_login_name(self,text):
         result = self.is_text(self.login_sucess_name,text)
@@ -537,10 +541,12 @@ class drg_pages(Base):
     # --------------跳转归属用户页面-------------------------------------009
     def affiliationUser(self):
         self.FBF_page()
-        self.click(self.audit_status)
-        time.sleep(1)
-        self.click(self.the_audit_pass)
+        self.sendKeys(self.faf_jc,'欣欣向荣科技有限公司')
+        # self.click(self.audit_status)
+        # time.sleep(1)
+        # self.click(self.the_audit_pass)
         self.click(self.check_button)
+        time.sleep(1)
         self.click(self.affiliation_user)
     def affiliationUserSucess(self,text):
         result = self.is_text(self.affiliation_user_sucess, text)
@@ -579,8 +585,8 @@ class drg_pages(Base):
         self.click(self.add_task_3)
         self.sendKeys(self.add_task_4,shortname)
         self.click(self.add_task_5)
-        time.sleep(1)
-        self.click(self.add_task_5_1)
+        # time.sleep(1)
+        # self.click(self.add_task_5_1)
         time.sleep(1)
         self.click(self.add_task_6)
         time.sleep(1)
@@ -787,6 +793,7 @@ class drg_pages(Base):
         self.click(self.loan_details2)
         self.clear(self.loan_details3)
         self.click(self.loan_details4)
+        time.sleep(1)
         self.click(self.loan_details5)
     def loanDetailsSucess(self,text):
         result = self.is_text(self.loan_details_sucess,text)
@@ -795,7 +802,6 @@ class drg_pages(Base):
     # ---------------上传完税证明-----------------------------------022
     def upLoadProve(self):
         self.login()
-        self.driver.maximize_window()
         self.click(self.loan_details1)
         time.sleep(1)
         self.click(self.loan_details2)
@@ -822,10 +828,10 @@ class drg_pages(Base):
         return result
     # --------------------------批次放款记录---------------------------------024
     def banthLoan1(self):
-        self.login()
         self.banthLoan()
         self.clear(self.banth_loan3)
         self.click(self.banth_loan4)
+        time.sleep(1)
         self.click(self.banth_loan5)
     def banthLoan1Sucess(self,text):
         result = self.is_text(self.banth_loan_sucess1, text)

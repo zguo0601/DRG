@@ -84,14 +84,14 @@ class DRG(unittest.TestCase):
 
     def test_drg_006(self):
         '''发包方简称查询'''
-        name = '极限传媒'
+        name = '玉屏葛来娣服装店'
         self.DP.checkShortname(name)
         result = self.DP.checkShortnameSucess(name)
         print(result)
 
     def test_drg_007(self):
         '''纳税人是编号查询'''
-        number = '20200114174015'
+        number = '92350181MA2YCNKX71'
         self.DP.checkRatepayerNumber(number)
         result = self.DP.checkRatepayerSucess(number)
         print(result)
@@ -105,7 +105,7 @@ class DRG(unittest.TestCase):
     def test_drg_009(self):
         '''跳转归属用户页面'''
         self.DP.affiliationUser()
-        result = self.DP.affiliationUserSucess('归属承揽方')
+        result = self.DP.affiliationUserSucess("1")
         print(result)
 
     def test_drg_010(self):
@@ -123,7 +123,7 @@ class DRG(unittest.TestCase):
     def test_drg_012(self):
         '''新增任务'''
         name = self.sj.name()
-        shortname = '极限传媒'
+        shortname = '玉屏葛来娣服装店'
         taskname = name
         money = '5000'
         number = '200'
@@ -147,7 +147,7 @@ class DRG(unittest.TestCase):
 
     def test_drg_015(self):
         '''关闭任务'''
-        shortname = '极限传媒'
+        shortname = '玉屏葛来娣服装店'
         taskname = '海绵宝宝111'
         money = '500'
         number = '20'
@@ -506,12 +506,6 @@ class DRG(unittest.TestCase):
         cls.driver.quit()
 
 if __name__ == '__main__':
-    driver = webdriver.Chrome()
-    url = 'https://spman.shb02.net/admin/login'
-    a = DRG(driver)
-    a.test_drg_009()
-    a.test_drg_014()
-    a.test_drg_065()
-
+    unittest.main()
 
 
