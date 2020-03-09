@@ -84,7 +84,7 @@ class DRG(unittest.TestCase):
 
     def test_drg_006(self):
         '''发包方简称查询'''
-        name = '玉屏葛来娣服装店'
+        name = '极限传媒'
         self.DP.checkShortname(name)
         result = self.DP.checkShortnameSucess(name)
         print(result)
@@ -123,7 +123,7 @@ class DRG(unittest.TestCase):
     def test_drg_012(self):
         '''新增任务'''
         name = self.sj.name()
-        shortname = '玉屏葛来娣服装店'
+        shortname = '极限传媒'
         taskname = name
         money = '5000'
         number = '200'
@@ -147,7 +147,7 @@ class DRG(unittest.TestCase):
 
     def test_drg_015(self):
         '''关闭任务'''
-        shortname = '玉屏葛来娣服装店'
+        shortname = '极限传媒'
         taskname = '海绵宝宝111'
         money = '500'
         number = '20'

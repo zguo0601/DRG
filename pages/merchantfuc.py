@@ -114,7 +114,7 @@ class Merchant(Base):
 
 
     #商户登录--------001
-    def merchantLogin(self,user='M009429',psw='111111'):
+    def merchantLogin(self,user='M002137',psw='111111'):
         self.driver.get('https://spman.shb02.net/login')
         self.sendKeys(self.username,user)
         self.sendKeys(self.password,psw)

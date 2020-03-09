@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="72782b61-1108-4fea-ba2d-44e8cddf854e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case/lianxi.py" beforeDir="false" afterPath="$PROJECT_DIR$/case/lianxi.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/case/test_drg.py" beforeDir="false" afterPath="$PROJECT_DIR$/case/test_drg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/merchantfuc.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/merchantfuc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/page_drg.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/page_drg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/report/result.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +173,8 @@
       <workItem from="1583284789558" duration="2453000" />
       <workItem from="1583389014425" duration="11752000" />
       <workItem from="1583459414089" duration="3538000" />
-      <workItem from="1583544950889" duration="11232000" />
+      <workItem from="1583544950889" duration="14424000" />
+      <workItem from="1583717768949" duration="40000" />
     </task>
     <servers />
   </component>
@@ -202,22 +199,22 @@
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
     <state x="740" y="338" key="FileChooserDialogImpl/0.0.1920.1160@0.0.1920.1160" timestamp="1583463910493" />
-    <state width="1877" height="480" key="GridCell.Tab.0.bottom" timestamp="1583569039931">
+    <state width="1877" height="338" key="GridCell.Tab.0.bottom" timestamp="1583576229383">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1877" height="480" key="GridCell.Tab.0.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1583569039931" />
-    <state width="1877" height="480" key="GridCell.Tab.0.center" timestamp="1583569039930">
+    <state width="1877" height="338" key="GridCell.Tab.0.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1583576229383" />
+    <state width="1877" height="338" key="GridCell.Tab.0.center" timestamp="1583576229383">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1877" height="480" key="GridCell.Tab.0.center/0.0.1920.1160@0.0.1920.1160" timestamp="1583569039930" />
-    <state width="1877" height="480" key="GridCell.Tab.0.left" timestamp="1583569039930">
+    <state width="1877" height="338" key="GridCell.Tab.0.center/0.0.1920.1160@0.0.1920.1160" timestamp="1583576229383" />
+    <state width="1877" height="338" key="GridCell.Tab.0.left" timestamp="1583576229382">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1877" height="480" key="GridCell.Tab.0.left/0.0.1920.1160@0.0.1920.1160" timestamp="1583569039930" />
-    <state width="1877" height="480" key="GridCell.Tab.0.right" timestamp="1583569039930">
+    <state width="1877" height="338" key="GridCell.Tab.0.left/0.0.1920.1160@0.0.1920.1160" timestamp="1583576229382" />
+    <state width="1877" height="338" key="GridCell.Tab.0.right" timestamp="1583576229383">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1877" height="480" key="GridCell.Tab.0.right/0.0.1920.1160@0.0.1920.1160" timestamp="1583569039930" />
+    <state width="1877" height="338" key="GridCell.Tab.0.right/0.0.1920.1160@0.0.1920.1160" timestamp="1583576229383" />
     <state width="1877" height="470" key="GridCell.Tab.1.bottom" timestamp="1583403237789">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
