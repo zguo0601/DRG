@@ -167,14 +167,14 @@ class drg_pages(Base):
     loan_details2 = ('xpath','//*[@id="menu"]/li[4]/ul/li[1]')
     loan_details3 = ('xpath','//*[@id="app"]/section/div[2]/section/div[1]/form/div[2]/div/div/input')
     loan_details4 = ('xpath','//*[text()="查询"]')
-    loan_details5 = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr[1]/td[11]/div/button[1]/span')
+    loan_details5 = ('xpath','//tbody/tr[1]/td[12]/div/button[1]/span')
     loan_details_sucess = ('xpath','//*[@id="app"]/section/div[2]/section/h2')
     # 022 上传完税证明
     upload_prove4 = ('xpath','//*[@placeholder="放款状态"]')
     upload_prove5 = ('xpath','/html/body/div[3]/div/div[1]/ul/li[1]/span')
     upload_prove6 = ('xpath','//*[text()="查询"]')
-    upload_prove7 = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr[1]/td[11]/div/label/input')
-    upload_prove_sucess = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr[1]/td[11]/div/label')
+    upload_prove7 = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr[1]/td[12]/div/label/input')
+    upload_prove_sucess = ('xpath','//*[@id="app"]/section/div[2]/section/div[3]/div[3]/table/tbody/tr[1]/td[12]/div/label')
     # 023 批量放款记录页面
     banth_loan1 = ('xpath','//*[@id="menu"]/li[4]/div/span')
     banth_loan2 = ('xpath','//*[@id="menu"]/li[4]/ul/li[2]')
@@ -541,7 +541,7 @@ class drg_pages(Base):
     # --------------跳转归属用户页面-------------------------------------009
     def affiliationUser(self):
         self.FBF_page()
-        self.sendKeys(self.faf_jc,'欣欣向荣科技有限公司')
+        self.sendKeys(self.faf_jc,'极限传媒')
         # self.click(self.audit_status)
         # time.sleep(1)
         # self.click(self.the_audit_pass)
