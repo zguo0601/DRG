@@ -103,6 +103,39 @@ class Merchant(Base):
     apply_21 = ('xpath', '//*[@id="app"]/section/div[2]/section/div[1]/form/div[6]/div/button')
     apply_22 = ('xpath', '//*[@id="app"]/section/div[2]/section/div[2]/div[3]/table/tbody/tr[1]/td[5]')
 
+    #放款
+    loan_1 = ('xpath','//span[text()="放款"]')
+    loan_2 = ('xpath','//li[text()="放款管理"]')
+    loan_sucess = ('xpath','//span[text()="放款笔数（笔）"]')
+
+    #放款订单详情页面
+    loan_details_1 = ('xpath','//input[@placeholder="选择开始时间"]')
+    loan_details_2 = ('xpath','//span[text()="查询"]')
+    loan_details_3 = ('xpath','//tbody/tr[1]/td[8]/div/button[1]/span')
+    loan_details_sucess = ('xpath','//h2[text()="放款详情"]')
+
+    #打开未放款-待支付页面
+    loan_details_4 = ('xpath', '//div[text()="未放款-待支付"]')
+    loan_details_sucess1 = ('xpath', '//span[text()="未放款-待支付（笔）"]')
+
+    #发起单笔放款1.点击发起放款2.上传结算单3.输入已新增的用户姓名、省份号码、放款金额4.点击确认新增
+    # 5.判断是否已新增任务，否的话，运营端新增任务，是的话点击确认新增6.点击确认打款7.输入支付密码8.点击确认
+    a_loan_1 = ('xpath','//li[text()="发起放款"]')
+    a_loan_2 = ('xpath','//input[@class="upload-files"]')
+    a_loan_3 = ('xpath','//div[@class="container"]/section/table/tr[2]/td[2]/div')
+    a_loan_4 = ('xpath','//div[@class="container"]/section/table/tr[2]/td[3]/div')
+    a_loan_5 = ('xpath','//div[@class="container"]/section/table/tr[2]/td[5]/div')
+    a_loan_6 = ('xpath','//span[text()="确认新增"]')
+    #断言是否未新增任务
+    a_loan_7 = ('xpath','//p[text()="您还未添加任务,请先前往添加"]')
+
+
+
+
+
+
+
+
 
 
     def __init__(self,driver):
@@ -116,9 +149,11 @@ class Merchant(Base):
     #商户登录--------001
     def merchantLogin(self,user='M002137',psw='111111'):
         self.driver.get('https://spman.shb02.net/login')
+        self.driver.maximize_window()
         self.sendKeys(self.username,user)
         self.sendKeys(self.password,psw)
         self.click(self.login_but)
+
     def get_merchant_name(self,text):
         result = self.is_text(self.m_name,text)
         return result
@@ -225,6 +260,61 @@ class Merchant(Base):
     def rechangeNumberDetailsSucess(self,text):
         result = self.is_text(self.rechange_number_details2,text)
         return result
+
+    #打开放款管理页面
+    def loanManagement(self):
+        self.merchantLogin()
+        self.click(self.loan_1)
+        time.sleep(1)
+        self.click(self.loan_2)
+    def loanManagementSucess(self, text):
+        result = self.is_text(self.loan_sucess, text)
+        return result
+
+
+    #打开放款订单详情页面
+    def loanDetails(self):
+        self.loanManagement()
+        self.clear(self.loan_details_1)
+        self.click(self.loan_details_2)
+        time.sleep(1)
+        self.click(self.loan_details_3)
+    def loanDetailsSucess(self,text):
+        result  = self.is_text(self.loan_details_sucess,text)
+        return result
+
+    #打开未放款-待支付页面
+    def loanToBePay(self):
+        self.loanManagement()
+        self.click(self.loan_details_4)
+    def loanToBePaySucess(self,text):
+        result = self.is_text(self.loan_details_sucess1, text)
+        return result
+
+    #单笔放款1.点击发起放款2.上传结算单3.输入已新增的用户姓名、省份号码、放款金额4.点击确认
+    # 5.判断是否已新增任务，否的话，运营端新增任务，是的话点击确认新增6.点击确认打款7.输入支付密码8.点击确认
+    # def singleLoan(self):
+    #     self.merchantLogin()
+    #     self.click(self.loan_1)
+    #     self.click(self.a_loan_1)
+    #     self.sendKeys(self.a_loan_2,'C:\\Users\\a\\Desktop\\新建文件夹\6.png')
+    #     self.sendKeys(self.a_loan_3,'郑国')
+    #     self.sendKeys(self.a_loan_4,'350181199006012155')
+    #     self.sendKeys(self.a_loan_5,'1')
+    #     self.click(self.a_loan_6)
+    #     result = self.is_text(self.a_loan_7,'您还未添加任务,请先前往添加')
+    #     if result ==True:
+
+
+
+
+
+
+
+
+
+
+
 
 
     #开票申请-------------------------------------007
@@ -393,8 +483,8 @@ if __name__ == '__main__':
     phone = sj.phone()
     text = '暂无数据'
     money = 200
-    MC.rechangeNumberDetails()
-    # result = MC.applyInvoiceSucess('开票申请成功')
-    # print(result)
+    MC.loanToBePay()
+    result = MC.loanToBePaySucess('未放款-待支付')
+    print(result)
 
 

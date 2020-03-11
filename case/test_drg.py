@@ -497,6 +497,24 @@ class DRG(unittest.TestCase):
         result = self.MC.rechangeNumberDetailsSucess('充值详情')
         print(result)
 
+    def test_drg_066(self):
+        '''打开放款管理页面'''
+        self.MC.loanManagement()
+        result = self.MC.loanManagementSucess('放款笔数（笔）')
+        print(result)
+
+    def test_drg_067(self):
+        '''打开放款订单详情页面'''
+        self.MC.loanDetails()
+        result = self.MC.loanDetailsSucess('放款详情')
+        print(result)
+
+    def test_deg_068(self):
+        '''打开未放款-待支付页面'''
+        self.MC.loanToBePay()
+        result = self.MC.loanToBePaySucess('未放款-待支付')
+        print(result)
+
 
 
 
