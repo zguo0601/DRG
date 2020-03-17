@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="72782b61-1108-4fea-ba2d-44e8cddf854e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/case/geckodriver.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/case/多线程启动不同的浏览器.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case/api_post请求.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/case/lianxi.py" beforeDir="false" afterPath="$PROJECT_DIR$/case/lianxi.py" afterDir="false" />
-    </list>
+    <list default="true" id="72782b61-1108-4fea-ba2d-44e8cddf854e" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -213,7 +207,7 @@
       <workItem from="1584077687748" duration="555000" />
       <workItem from="1584080758993" duration="1948000" />
       <workItem from="1584323025308" duration="1811000" />
-      <workItem from="1584408174471" duration="4810000" />
+      <workItem from="1584408174471" duration="5587000" />
     </task>
     <servers />
   </component>
