@@ -1,27 +1,28 @@
-import requests
-import json
+from selenium import webdriver
+import  time
+from case.多线程启动不同的浏览器 import startBrowser
 
-'''接口地址：https://tcc.taobao.com/cc/json/mobile_tel_segment.htm?tel= 
-请求方式：get '''
+def run_case(name):
+    driver = startBrowser(name)
+    driver.get("http://www.baidu.com/")
+    time.sleep(3)
+    print(driver.title)
+    driver.close()
+    driver.quit()
 
-#第一种参数保存在url地址里面
-url = "https://tcc.taobao.com/cc/json/mobile_tel_segment.htm?tel=18120798657"
-r = requests.get(url=url)
-print(r.text)
-print(r.status_code)
-print(r.cookies)
-print(r.url)
 
-#第二种方法，参数保存在params,是用字典格式进行保存
 
-url1 = "https://tcc.taobao.com/cc/json/mobile_tel_segment.htm"
-params = {
-    "tel":"18120798657"
-}
+names = ["chrome", "Firefox","Chrome", "ff"]
+for i in names:
+    run_case(i)
+    if i in names:
+        break
 
-r1 = requests.get(url=url1,params=params)
-print(r1.text)
-print(r1.status_code)
+
+
+
+
+
 
 
 

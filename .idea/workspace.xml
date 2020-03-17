@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72782b61-1108-4fea-ba2d-44e8cddf854e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/case/geckodriver.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/case/多线程启动不同的浏览器.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case/pytest.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/case/test_drg.py" beforeDir="false" afterPath="$PROJECT_DIR$/case/test_drg.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case/test_pytest.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/merchantfuc.py" beforeDir="false" afterPath="$PROJECT_DIR$/pages/merchantfuc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/report/result.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_all.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_all.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/case/api_post请求.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/case/lianxi.py" beforeDir="false" afterPath="$PROJECT_DIR$/case/lianxi.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,20 +33,42 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../drg_api" />
+    <property name="last_opened_file_path" value="D:/spman-java-demo" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\web_auto\common" />
-      <recent name="E:\web_auto\report" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\web_auto\pages" />
       <recent name="E:\web_auto\common" />
     </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\web_auto\common" />
+      <recent name="E:\web_auto\report" />
+    </key>
   </component>
-  <component name="RunManager" selected="Python.run_all">
+  <component name="RunManager" selected="Python.lianxi">
+    <configuration name="api_post请求" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="web_auto" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/case" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/case/api_post请求.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="base" type="PythonConfigurationType" factoryName="Python">
       <module name="web_auto" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -71,6 +91,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="lianxi" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="web_auto" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/case" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/case/lianxi.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="pytest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="web_auto" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -85,28 +127,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/case/pytest.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest_1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="web_auto" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/case" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/case/pytest_1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -159,28 +179,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests in pytest.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="web_auto" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/case" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/case/pytest.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.lianxi" />
+        <item itemvalue="Python.api_post请求" />
         <item itemvalue="Python.run_all" />
         <item itemvalue="Python.test_drg_api" />
         <item itemvalue="Python.pytest" />
-        <item itemvalue="Python.pytest_1" />
-        <item itemvalue="Python tests.Unittests in pytest.py" />
       </list>
     </recent_temporary>
   </component>
@@ -202,7 +207,13 @@
       <workItem from="1583544950889" duration="14424000" />
       <workItem from="1583717768949" duration="15117000" />
       <workItem from="1583806653591" duration="12309000" />
-      <workItem from="1583889204476" duration="898000" />
+      <workItem from="1583889204476" duration="3114000" />
+      <workItem from="1583975924016" duration="1781000" />
+      <workItem from="1584062024998" duration="613000" />
+      <workItem from="1584077687748" duration="555000" />
+      <workItem from="1584080758993" duration="1948000" />
+      <workItem from="1584323025308" duration="1811000" />
+      <workItem from="1584408174471" duration="4810000" />
     </task>
     <servers />
   </component>
@@ -223,46 +234,50 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="338" key="FileChooserDialogImpl" timestamp="1583889232111">
+    <state x="660" y="388" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1584349064496">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state x="740" y="338" key="FileChooserDialogImpl/0.0.1920.1160@0.0.1920.1160" timestamp="1583889232111" />
-    <state width="1877" height="288" key="GridCell.Tab.0.bottom" timestamp="1583835025584">
+    <state x="660" y="388" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1160@0.0.1920.1160" timestamp="1584349064496" />
+    <state x="740" y="338" key="FileChooserDialogImpl" timestamp="1584349088539">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1877" height="288" key="GridCell.Tab.0.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1583835025584" />
-    <state width="1877" height="288" key="GridCell.Tab.0.center" timestamp="1583835025584">
+    <state x="740" y="338" key="FileChooserDialogImpl/0.0.1920.1160@0.0.1920.1160" timestamp="1584349088539" />
+    <state width="1877" height="288" key="GridCell.Tab.0.bottom" timestamp="1584415733044">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1877" height="288" key="GridCell.Tab.0.center/0.0.1920.1160@0.0.1920.1160" timestamp="1583835025584" />
-    <state width="1877" height="288" key="GridCell.Tab.0.left" timestamp="1583835025584">
+    <state width="1877" height="288" key="GridCell.Tab.0.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1584415733044" />
+    <state width="1877" height="288" key="GridCell.Tab.0.center" timestamp="1584415733044">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1877" height="288" key="GridCell.Tab.0.left/0.0.1920.1160@0.0.1920.1160" timestamp="1583835025584" />
-    <state width="1877" height="288" key="GridCell.Tab.0.right" timestamp="1583835025584">
+    <state width="1877" height="288" key="GridCell.Tab.0.center/0.0.1920.1160@0.0.1920.1160" timestamp="1584415733044" />
+    <state width="1877" height="288" key="GridCell.Tab.0.left" timestamp="1584415733044">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1877" height="288" key="GridCell.Tab.0.right/0.0.1920.1160@0.0.1920.1160" timestamp="1583835025584" />
-    <state width="1877" height="470" key="GridCell.Tab.1.bottom" timestamp="1583403237789">
+    <state width="1877" height="288" key="GridCell.Tab.0.left/0.0.1920.1160@0.0.1920.1160" timestamp="1584415733044" />
+    <state width="1877" height="288" key="GridCell.Tab.0.right" timestamp="1584415733044">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1877" height="470" key="GridCell.Tab.1.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1583403237789" />
-    <state width="1877" height="470" key="GridCell.Tab.1.center" timestamp="1583403237789">
+    <state width="1877" height="288" key="GridCell.Tab.0.right/0.0.1920.1160@0.0.1920.1160" timestamp="1584415733044" />
+    <state width="1877" height="470" key="GridCell.Tab.1.bottom" timestamp="1584415034137">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1877" height="470" key="GridCell.Tab.1.center/0.0.1920.1160@0.0.1920.1160" timestamp="1583403237789" />
-    <state width="1877" height="470" key="GridCell.Tab.1.left" timestamp="1583403237789">
+    <state width="1877" height="470" key="GridCell.Tab.1.bottom/0.0.1920.1160@0.0.1920.1160" timestamp="1584415034137" />
+    <state width="1877" height="470" key="GridCell.Tab.1.center" timestamp="1584415034137">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1877" height="470" key="GridCell.Tab.1.left/0.0.1920.1160@0.0.1920.1160" timestamp="1583403237789" />
-    <state width="1877" height="470" key="GridCell.Tab.1.right" timestamp="1583403237789">
+    <state width="1877" height="470" key="GridCell.Tab.1.center/0.0.1920.1160@0.0.1920.1160" timestamp="1584415034137" />
+    <state width="1877" height="470" key="GridCell.Tab.1.left" timestamp="1584415034137">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state width="1877" height="470" key="GridCell.Tab.1.right/0.0.1920.1160@0.0.1920.1160" timestamp="1583403237789" />
-    <state x="199" y="179" key="SettingsEditor" timestamp="1583830002800">
+    <state width="1877" height="470" key="GridCell.Tab.1.left/0.0.1920.1160@0.0.1920.1160" timestamp="1584415034137" />
+    <state width="1877" height="470" key="GridCell.Tab.1.right" timestamp="1584415034137">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
-    <state x="199" y="179" key="SettingsEditor/0.0.1920.1160@0.0.1920.1160" timestamp="1583830002800" />
+    <state width="1877" height="470" key="GridCell.Tab.1.right/0.0.1920.1160@0.0.1920.1160" timestamp="1584415034137" />
+    <state x="199" y="179" key="SettingsEditor" timestamp="1583910631236">
+      <screen x="0" y="0" width="1920" height="1160" />
+    </state>
+    <state x="199" y="179" key="SettingsEditor/0.0.1920.1160@0.0.1920.1160" timestamp="1583910631236" />
     <state x="677" y="672" key="com.intellij.ide.util.TipDialog" timestamp="1582710018972">
       <screen x="0" y="0" width="1920" height="1160" />
     </state>
@@ -295,8 +310,8 @@
     <SUITE FILE_PATH="coverage/web_auto$Unittests_for_test_drg_DRG_test_drg_020.coverage" NAME="Unittests for test_drg.DRG.test_drg_020 Coverage Results" MODIFIED="1583719508887" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
     <SUITE FILE_PATH="coverage/web_auto$Unittests_for_test_drg_DRG_test_drg_024.coverage" NAME="Unittests for test_drg.DRG.test_drg_024 Coverage Results" MODIFIED="1583569039919" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
     <SUITE FILE_PATH="coverage/web_auto$Unittests_for_test_drg_DRG_test_drg_065.coverage" NAME="Unittests for test_drg.DRG.test_drg_065 Coverage Results" MODIFIED="1583567688866" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
-    <SUITE FILE_PATH="coverage/web_auto$lianxi.coverage" NAME="lianxi Coverage Results" MODIFIED="1583397992602" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
     <SUITE FILE_PATH="coverage/web_auto$Unittests_for_test_drg_DRG_test_drg_040.coverage" NAME="Unittests for test_drg.DRG.test_drg_040 Coverage Results" MODIFIED="1583546488953" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
+    <SUITE FILE_PATH="coverage/web_auto$lianxi.coverage" NAME="lianxi Coverage Results" MODIFIED="1584415733037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
     <SUITE FILE_PATH="coverage/web_auto$Unittests_for_test_drg_DRG_test_drg_022.coverage" NAME="Unittests for test_drg.DRG.test_drg_022 Coverage Results" MODIFIED="1583739716040" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
     <SUITE FILE_PATH="coverage/web_auto$Unittests_for_test_drg_DRG_test_drg_039.coverage" NAME="Unittests for test_drg.DRG.test_drg_039 Coverage Results" MODIFIED="1583546305392" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
     <SUITE FILE_PATH="coverage/web_auto$Unittests_for_test_drg_DRG_test_drg_057.coverage" NAME="Unittests for test_drg.DRG.test_drg_057 Coverage Results" MODIFIED="1583566934752" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
@@ -309,6 +324,6 @@
     <SUITE FILE_PATH="coverage/web_auto$Unittests_for_test_drg_DRG_test_drg_050.coverage" NAME="Unittests for test_drg.DRG.test_drg_050 Coverage Results" MODIFIED="1583550254010" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
     <SUITE FILE_PATH="coverage/web_auto$Unittests_for_test_drg_DRG_test_drg_058.coverage" NAME="Unittests for test_drg.DRG.test_drg_058 Coverage Results" MODIFIED="1583566963678" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
     <SUITE FILE_PATH="coverage/web_auto$test_pytest.coverage" NAME="test_pytest Coverage Results" MODIFIED="1583740533465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
-    <SUITE FILE_PATH="coverage/web_auto$api_post.coverage" NAME="api_post请求 Coverage Results" MODIFIED="1583464011607" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
+    <SUITE FILE_PATH="coverage/web_auto$api_post.coverage" NAME="api_post请求 Coverage Results" MODIFIED="1584413927345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/case" />
   </component>
 </project>
